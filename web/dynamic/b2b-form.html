@@ -1,3 +1,13 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2378644"
+>
+  <member name="b2b-article" type="view" order="ord" propertyid="7246" />
+</basis>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,10 +50,22 @@
       class="w-full visa-form mt-3 flex flex-col items-center gap-3 justify-center"
     >
       <div class="w-full lg:px-5 py-[22px] xl:w-[1280px]">
-        <h1 class="w-full mb-3 flex">B2B Register Form</h1>
+        <div class="flex w-full justify-center items-center flex-col gap-7">
+          <h1 class=" mt-6 text-xl text-center font-bold text-zinc-900">
+            B2B Register Form
+          </h1>
+
+          <basis core="print" datamembername="db.b2b-article">
+            <face filter="TypeID=250">
+              <div class="flex flex-col mb-6 w-full gap-3 justify-center items-center">
+                <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
+                <div class="text-sm text-center w-70 text-zinc-600">@largetext</div></div
+            ></face>
+          </basis>
+        </div>
         <div
           id="visa-form"
-          class="flex flex-col mt-3 w-full bg-primary-50 lg:px-5 py-[22px] rounded-lg"
+          class="flex flex-col mt-3 w-full bg-[#F2F2F280] lg:px-5 py-[22px] rounded-xl"
         >
           <basis
             core="schema"

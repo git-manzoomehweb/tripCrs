@@ -1,3 +1,13 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2378644"
+>
+  <member name="b2b-article" type="view" order="ord" propertyid="7246" />
+</basis>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,9 +47,16 @@
   <body>
     <basis core="call" file="header.inc" lid="2" />
     <main class="w-full visa-form px-5 mt-3 flex flex-col gap-3 justify-center">
-      <h1 class="w-full mb-3 flex">B2B Register Form</h1>
+      <h1 class="w-full mb-3 flex text-center justify-center">B2B Register Form</h1>
+      <basis core="print" datamembername="db.b2b-article">
+        <face filter="TypeID=250">
+          <div class="flex flex-col mb-6 w-full gap-3 justify-center items-center">
+            <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
+            <div class="text-sm text-center  text-zinc-600">@largetext</div></div
+        ></face>
+      </basis>
       <div
-        class="bg-primary-50 rounded-lg px-5 py-[22px] w-full overflow-hidden"
+        class="bg-[#F2F2F280] rounded-lg px-5 py-[22px] w-full overflow-hidden"
       >
         <div id="visa-form" class="flex flex-col gap-3">
           <basis

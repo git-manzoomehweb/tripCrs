@@ -1,60 +1,127 @@
 function listenCookieChange() {
   if (document.querySelector("body.set-cst")) {
     const element = document.querySelector(".load-search-box-in-condition");
-    if (document.getElementById("registerbox").dataset.checkrkey == "true") {
-      $.get("/Client_User_Type.inc", function (response) {
-        if (response == "2" || response == "1") {
-          $("#registerbox").hide();
-          $("#bg-box").hide();
-          $("#login_register_box").hide();
-          $(".loading").hide();
-          // document.querySelector(".loading").classList.add("hidden");
-          $(".hidden-part").hide();
+    const registerBox = document.getElementById("registerbox");
 
-          if (element) {
-            if (element.classList.contains("hidden")) {
+    if (registerBox.dataset.checkrkey === "true") {
+      fetch("/Client_User_Type.inc")
+        .then((response) => response.text())
+        .then((response) => {
+          if (response === "2" || response === "1") {
+            // Hide elements
+            document
+              .getElementById("registerbox")
+              ?.style.setProperty("display", "none");
+            document
+              .getElementById("bg-box")
+              ?.style.setProperty("display", "none");
+            document
+              .getElementById("login_register_box")
+              ?.style.setProperty("display", "none");
+            document
+              .querySelectorAll(".loading")
+              .forEach((el) => el.style.setProperty("display", "none"));
+            document
+              .querySelectorAll(".hidden-part")
+              .forEach((el) => el.style.setProperty("display", "none"));
+
+            // Show search box
+            if (element) {
               element.classList.remove("hidden");
+              element.style.setProperty("display", "block", "important");
             }
-            element.style.setProperty("display", "block", "important");
-          }
 
-          $("#search_engine").load("/search-engine.bc");
-          document
-            .querySelector(".after-login-section")
-            .classList.remove("hidden");
-          $("body").addClass("searchbox-load-success");
-        } else if (response == "3") {
-          console.log("Hiiiiiiiii5555");
-          
-          document
-            .querySelector(".login_register_box ")
-            .classList.add("set-for-not-b2b");
-          $(".loading").hide();
-          // document.querySelector(".loading").classList.add("hidden");
-          // $(".hidden-part").hide();
-          $("#box").hide();
-          $("#registerbox").hide();
-          $("#bg-box").show();
-          document
-            .querySelector(".after-login-section")
-            .classList.add("hidden");
-          $("#login_register_box").hide();
-          if (element) {
-            if (element.classList.contains("hidden")) {
-              element.classList.add("hidden");
+            // Load search engine content
+            function fetchEngine() {
+              try {
+                var xhrobj = new XMLHttpRequest();
+                xhrobj.open("GET", "search-engine.bc");
+                xhrobj.send();
+
+                xhrobj.onreadystatechange = function () {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var container = document.getElementById("search_engine");
+                    container.innerHTML = xhrobj.responseText;
+
+                    var scripts = container.getElementsByTagName("script");
+                    for (var i = 0; i < scripts.length; i++) {
+                      var scriptTag = document.createElement("script");
+                      if (scripts[i].src) {
+                        scriptTag.src = scripts[i].src;
+                        scriptTag.async = false;
+                      } else {
+                        scriptTag.text = scripts[i].textContent;
+                      }
+                      document.head
+                        .appendChild(scriptTag)
+                        .parentNode.removeChild(scriptTag);
+                    }
+                  }
+                };
+              } catch (error) {
+                console.error("an error ocurred,please wait...", error);
+              }
             }
-            element.style.setProperty("display", "none", "important");
+            fetchEngine();
+
+            // Show after-login section
+            document
+              .querySelector(".after-login-section")
+              .classList.remove("hidden");
+            const credit = document.querySelector(".after-login-section")
+              .dataset.credit;
+            if (credit) {
+              if (response == "2") {
+                $bc.setSource("cms.get_agency_counter_credit", true);
+              }
+            }
+
+            // Add class to body
+            document.body.classList.add("searchbox-load-success");
+          } else if (response === "3") {
+            document
+              .querySelector(".login_register_box")
+              .classList.add("set-for-not-b2b");
+
+            document
+              .querySelectorAll(".loading")
+              .forEach((el) => el.style.setProperty("display", "none"));
+
+            document.getElementById("box").style.setProperty("display", "none");
+            document
+              .getElementById("registerbox")
+              ?.style.setProperty("display", "none");
+            document
+              .getElementById("bg-box")
+              ?.style.setProperty("display", "block");
+
+            document
+              .querySelector(".after-login-section")
+              .classList.add("hidden");
+
+            document
+              .getElementById("login_register_box")
+              ?.style.setProperty("display", "none");
+
+            if (element) {
+              if (!element.classList.contains("hidden")) {
+                element.classList.add("hidden");
+              }
+              element.style.setProperty("display", "none", "important");
+            }
           }
-        }
-      });
+        });
     } else {
-      $("#login_register_box").show();
-      // document.querySelector("#login_register_box").classList.remove("hidden");
-      $(".loading").hide();
-      // document.querySelector(".loading").classList.add("hidden");
+      document
+        .getElementById("login_register_box")
+        ?.style.setProperty("display", "block");
+      document
+        .querySelectorAll(".loading")
+        .forEach((el) => el.style.setProperty("display", "none"));
     }
   }
 }
+
 listenCookieChange();
 // ___________________________________
 
@@ -447,7 +514,7 @@ function watchForSearchHistoryContent(callback) {
   });
 }
 watchForSearchHistoryContent(function (node) {
-  document.querySelector(".limit-section").classList.add("set-margin-top");
+  document.querySelector(".limit-section")?.classList.add("set-margin-top");
   const sEIcon = document.querySelectorAll(".arrow-history-icon");
   sEIcon.forEach((item) => {
     item.parentElement.classList.add("parent-for-cities");

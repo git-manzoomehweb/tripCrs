@@ -658,10 +658,7 @@ textarea::-moz-placeholder {
 .set-cst header a svg path {
   fill: white !important;
 }
-.searchbox-load-success.set-cst header .bars3 svg path,
-.searchbox-load-success.set-cst header a svg path {
-  fill: var(--primary-950) !important;
-}
+
 .set-cst header img.logo {
   filter: grayscale(1) brightness(44);
 }
@@ -672,7 +669,6 @@ textarea::-moz-placeholder {
 .set-cst header .border-primary-100 {
   border-color: #fff !important;
 }
-
 
 .hover\:transition-all:hover,
 .transition-all,
@@ -1744,7 +1740,7 @@ header {
   background-color: var(--tertiary-950);
 }
 .inactive,
-.limit-section a {
+.limit-section .card {
   background-color: #f4f4f5 !important;
 }
 .object-contain {
@@ -2058,7 +2054,7 @@ header {
   top: 56%;
   transform: translateY(-50%);
   position: absolute;
-  filter: invert(80%) sepia(100%) saturate(300%) hue-rotate(180deg) !important;
+  filter: invert(80%) sepia(100%) saturate(7000%) hue-rotate(180deg) !important;
 }
 .group:hover .group-hover\:fill-primary-200 {
   fill: var(--primary-200);
@@ -2710,6 +2706,7 @@ video {
 }
 .service-list.bg-primary-50 {
   padding: 22px 30px !important;
+  background-color: #F2F2F280 !important;
 }
 .our-partners article {
   height: 130px !important;
@@ -2727,9 +2724,9 @@ video {
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
-.our-partners article .container img {
+/* .our-partners article .container img {
   transform: scale(0.85);
-}
+} */
 .service-list.bg-primary-50 a {
   width: 300px !important;
   align-items: center;
@@ -2775,19 +2772,19 @@ video {
 .bg-primary-50 {
   background-color: var(--primary-50) !important;
 }
-.limit-section a {
+.limit-section .card {
   gap: 10px;
   height: 81px;
   justify-content: center;
   border-bottom: 4px solid #fee2e2;
 }
-.limit-section a span {
+.limit-section .card span {
   color: #71717a;
 }
-.limit-section a span p {
+.limit-section .card span p {
   color: var(--zinc-900);
 }
-.limit-section a:hover {
+.limit-section .card:hover {
   border-bottom: 4px solid #ff9c9c;
 }
 #contact-form-resize .bvgvkek img {
@@ -2815,8 +2812,8 @@ video {
   height: 541px !important;
 }
 .service-list a img {
-  width: 60px;
-  height: 60px !important;
+  width: 40px;
+  height: 40px !important;
   border-radius: 50%;
 }
 .loader {
@@ -2864,3 +2861,4 @@ video {
     transform: rotate(-360deg);
   }
 }
+

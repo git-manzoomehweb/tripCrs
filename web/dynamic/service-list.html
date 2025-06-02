@@ -14,6 +14,28 @@
   lid="2"
   mid="1"
   name="db"
+  usedforid="2378634"
+  
+>
+  <member name="service-article" type="view" order="ord" propertyid="7246"/>
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2378222"
+  
+>
+  <member name="partner-article" type="view" order="ord" propertyid="7246"/>
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
   catid="214829"
 >
   <member
@@ -98,19 +120,30 @@
         class="lg:px-5 py-[22px] flex flex-col gap-4 xl:w-[1280px] xl:!px-0"
       >
         <div class="flex w-full flex-col gap-3 justify-center">
-          <h1 class="font-bold text-center mb-3 text-xl">Our Services</h1>
+          <h1 class="font-bold text-center mb-3 mt-6 text-xl">Our Services</h1>
+          <basis core="print" datamembername="db.service-article">
+            <face filter="TypeID=250">
+              <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
+              <div class="w-full flex justify-center">
+                <div class="text-sm w-70 text-zinc-600 flex text-center flex-col items-center justify-center">@largetext</div>
+
+              </div>
+            </face>
+          </basis>
           <div
             class="w-full bg-primary-50 service-list rounded-xl p-5 flex justify-center items-center gap-7"
           >
             <basis core="print" datamembername="db.all-target-services">
               <face>
                 <a href="@link" class="flex flex-col gap-4">
-                  <img src="@image" alt="@title" loading="lazy" />
+                  <span class="bg-white p-3 rounded-xl"
+                    ><img src="@image" alt="@title" loading="lazy"
+                  /></span>
                   <p class="font-bold text-xl">@title</p>
 
-                  <div class="text-zinc-500 text-xs line-clamp-1">
+                  <!-- <div class="text-zinc-500 text-xs line-clamp-1">
                     @prp_7246
-                  </div>
+                  </div> -->
                 </a>
               </face>
             </basis>
@@ -206,12 +239,21 @@
             </a> -->
           </div>
         </div>
-        <div class="flex w-full flex-col gap-3 justify-center">
-          <h2 class="font-bold text-center text-xl mb-3 mt-3">Our Partners</h2>
+        <div class="flex w-full flex-col gap-3 justify-center mt-6">
+          <h2 class="font-bold text-center text-xl mb-3 mt-6">Our Partners</h2>
+          <basis core="print" datamembername="db.partner-article">
+            <face filter="TypeID=250">
+              <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
+              <div class="w-full flex justify-center">
+                <div class="text-sm w-70 text-zinc-600 flex text-center flex-col items-center justify-center">@largetext</div>
+
+              </div>
+            </face>
+          </basis>
           <basis core="print" datamembername="db.our-partners">
             <layout>
               <div
-                class="w-full our-partners overflow-hidden grid grid-cols-6 gap-7"
+                class="w-full our-partners overflow-hidden grid grid-cols-6 gap-7 mt-6"
               >
                 @child
               </div>

@@ -1,0 +1,105 @@
+<basis
+  core="api"
+  name="api.schema"
+  run="atclient"
+  url=" https://basisfly.com/panel/main/view/[##cms.cookie.rkey##] "
+  method="post"
+  body='{
+        "member": [
+            {
+                "type": "list",
+                "name": "get_agency_counter_credit",
+                "request": "get_agency_counter_credit"
+            }
+        ]
+    }'
+></basis>
+<basis
+  core="external.fly.ws"
+  procedurename="dbsource"
+  source="cmsDbService2"
+  name="db"
+>
+  <member
+    name="get_unit_currency"
+    method="cms"
+    query='{
+            "name": "db",
+            "mid": "20",
+            "member": [
+                {
+                    "type": "list",
+                    "request": "get_unit_currency",
+                    "dmnid": "[##cms.cms.domainid##]",
+                    "name": "q",
+                    "lid": "2"
+                   
+                }
+            ]
+        }'
+  />
+</basis>
+<basis core="group" name="Delay">
+  <basis core="inlinesource" name="db">
+    <member
+      name="title"
+      format="json"
+      postsql="select value from [db.title] where field = 'title'"
+    >
+      {"root":[##db.get_unit_currency.result##]}
+    </member>
+  </basis>
+  <basis
+    core="print"
+    datamembername="db.get_agency_counter_credit"
+    run="atclient"
+  >
+    <layout>
+      <script type="text/template">
+        <div class="limit-section grid grid-cols-1 gap-2">
+            @child
+        </div>
+      </script>
+    </layout>
+    <face>
+      <script type="text/template">
+        <div class="w-full card flex flex-col p-3 rounded-lg">
+            <span class="text-sm">OVERALL CREDIT</span>
+            <div class="text-xl font-bold flex gap-1">
+                  {{ return `
+                    <div>${new Intl.NumberFormat().format($data.total_credit).replace(/,/g,
+                    '/')}</div>`
+                 }}
+                [##db.title.value##]</div>
+        </div>
+        <div class="w-full card flex flex-col p-3 rounded-lg">
+            <span class="text-sm">DEBTOR</span>
+            <div class="text-xl font-bold flex gap-1">{{ return `
+                    <div>${new Intl.NumberFormat().format($data.debtor).replace(/,/g,
+                    '/')}</div>`
+                 }}
+
+                [##db.title.value##]</div>
+        </div>
+        <div class="w-full card flex flex-col p-3 rounded-lg">
+            <span class="text-sm">CREDITOR</span>
+            <p class="text-xl font-bold flex gap-1">  {{ return `
+                    <div>${new Intl.NumberFormat().format($data.creditor).replace(/,/g,
+                    '/')}</div>`
+                 }}
+
+                [##db.title.value##]</p>
+        </div>
+        <div class="w-full card flex flex-col p-3 rounded-lg">
+            <span class="text-sm">CREDIT AVAILABLE</span>
+            <div class="text-xl font-bold flex gap-1">
+                  {{ return `
+                    <div>${new Intl.NumberFormat().format($data.Remaining_credit).replace(/,/g,
+                    '/')}</div>`
+                 }}
+                [##db.title.value##]</div>
+        </div>
+      </script>
+    </face>
+  </basis>
+</basis>

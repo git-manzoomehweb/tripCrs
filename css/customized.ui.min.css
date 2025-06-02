@@ -578,12 +578,12 @@ html * {
   --primary-200: #95aac5;
   --primary-100: #beccdd;
   --primary-50: #e6ebf1;
-  --secondary-950: #040481;
-  --secondary: #040481;
+  --secondary-950: #2446ff;
+  --secondary: #2446ff;
   --secondary-900: #0017e7;
   --secondary-800: #0024ec;
-  --secondary-700: #0029f2;
-  --secondary-600: #1e30fa;
+  --secondary-700: #2446ff;
+  --secondary-600: #2446ff;
   --secondary-500: #3934ff;
   --secondary-400: #6954ff;
   --secondary-300: #8b74ff;
@@ -673,7 +673,7 @@ header .user-profile-body li a {
 }
 .searchbox-load-success.set-cst header .bars3 svg path,
 .searchbox-load-success.set-cst header a svg path {
-  fill: var(--primary-950) !important;
+  fill: var(--secondary) !important;
 }
 .set-cst header img.logo {
   filter: grayscale(1) brightness(44);
@@ -703,13 +703,13 @@ header .user-profile-body li a {
 .searchbox-load-success .mt-\[-145px\] {
   margin-top: 85px !important;
 }
-.user-profile-arrow{
+.user-profile-arrow {
   fill: var(--primary);
 }
 .footer-labels.active,
 .footer-labels:hover,
 footer .swiper-slide-active {
-  background-color: #002E58CC;
+  background-color: #002e58cc;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   height: 115px !important;
@@ -719,7 +719,7 @@ footer .swiper-slide-active {
 body:not(.set-cst) footer {
   margin-top: 15px !important;
 }
-.bg-secondary{
+.bg-secondary {
   background-color: var(--secondary);
 }
 .backdrop-blur-md {
@@ -777,10 +777,10 @@ header {
   .user-profile-btn {
     display: flex !important;
   }
-  #registerbox .user-profile-container {
+  .searchbox-load-success #registerbox .user-profile-container {
     position: fixed !important;
     top: 34px !important;
-    right: 175px !important;
+    right: 115px !important;
     z-index: 40 !important;
   }
   .max-sm\:\!justify-between {
@@ -788,6 +788,16 @@ header {
   }
   .max-sm\:\!border-none {
     border-style: none !important;
+  }
+}
+@media (min-width: 2080px) {
+  .searchbox-load-success.set-cst #registerbox .user-profile-container {
+    position: fixed !important;
+    top: 30px !important;
+    /* right: 150px !important; */
+    left: 74vw !important;
+    width: fit-content;
+    z-index: 40 !important;
   }
 }
 @media (min-width: 1280px) {
@@ -1088,9 +1098,15 @@ header {
   width: fit-content;
   display: flex;
 }
-#search_engine .FlightClass-text,
+#search_engine .FlightClass-text {
+  font-size: 14px;
+}
 #search_engine .passenger-counts {
   font-size: 14px;
+}
+#search_engine .passenger-counts .count {
+  font-weight: bold;
+  font-size: 18px;
 }
 #search_engine .FlightClass.hidden-box,
 #search_engine .passengerbox.hidden-box {
@@ -1226,7 +1242,7 @@ header {
   background-color: #fff;
   position: relative;
 }
-#search_engine #r-hotel .room-count {
+/* #search_engine #r-hotel .room-count {
   position: absolute;
   right: 5px;
   width: 50%;
@@ -1237,8 +1253,13 @@ header {
   padding-left: 0.9rem;
   border-left: 1px solid var(--zinc-300);
 }
-#search_engine #r-flighthotel .room-count::before,
 #search_engine #r-hotel .room-count::before {
+  width: 25px;
+  height: 25px;
+  content: "";
+  background-image: url("../images/Double-bed.svg");
+} */
+#search_engine #r-flighthotel .room-count::before {
   width: 25px;
   height: 25px;
   content: "";
@@ -1363,11 +1384,11 @@ header {
   white-space: nowrap !important;
 }
 .swiper-btn {
-  width: 30px !important;
-  height: 30px !important;
+  width: 23px !important;
+  height: 23px !important;
   top: 176px !important;
   background-color: #ffffffb7;
-  border: 5px solid #ffffff95;
+  border: 4px solid #ffffff95;
 }
 .searchHistory-content form:first-child {
   margin-left: 0 !important;
@@ -1401,8 +1422,68 @@ main.check-user-page {
 #registerbox .message-api .success {
   color: var(--primary-700) !important;
 }
+.textlocation:hover {
+  color: var(--secondary);
+  font-weight: bold;
+}
+.ul-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#visa-form .data-body-btn {
+  z-index: 20 !important;
+}
+h2.setscd:hover {
+  color: var(--secondary);
+}
 
+h2.setscd {
+  width: fit-content !important;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  font-size: 54px;
+  gap: 4px !important;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+h2.setscd span {
+  font-weight: 200 !important;
+}
+@media screen and (max-width: 1524px) {
+}
+@media screen and (max-width: 2281px) {
+}
 @media (min-width: 1024px) {
+  #visa-form {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+  h2.setscd {
+    font-size: 92px !important;
+  }
+  #visa-form #captchaContainer .justify-between .lg\:\!flex-row {
+    justify-content: space-between;
+    align-items: center !important;
+  }
+  .searchbox-load-success.set-cst #registerbox .user-profile-container {
+    position: fixed !important;
+    top: 30px !important;
+    /* right: 150px !important; */
+    left: 1355px;
+    width: fit-content;
+    z-index: 40 !important;
+  }
+  .article-bc-section {
+    padding-bottom: 150px !important;
+  }
+  .searchHistory-content .output-content form {
+    margin-bottom: 3px !important;
+  }
   .main-login-container {
     width: 400px !important;
   }
@@ -1412,12 +1493,13 @@ main.check-user-page {
   }
   .searchHistory-content .output-content {
     display: flex;
-    flex-wrap: nowrap !important;
+    /* flex-wrap: nowrap !important; */
     width: 100% !important;
     overflow-x: auto;
+    gap: 5px;
   }
   .searchHistory-content form {
-    margin-left: 0.5em !important;
+    margin-left: 0 !important;
   }
   /* .searchHistory-content {
     transform: translatey(160px);
@@ -1479,16 +1561,11 @@ main.check-user-page {
   }
   .set-cst #registerbox .user-profile-container {
     position: fixed !important;
-    top: -165px !important;
+    top: -165px;
     right: 0px !important;
     z-index: 40 !important;
   }
-  .searchbox-load-success.set-cst  #registerbox .user-profile-container {
-    position: fixed !important;
-    top: 30px !important;
-    right: 150px !important;
-    z-index: 40 !important;
-  }
+
   .basis-logo {
     gap: 0 !important;
   }
@@ -1706,7 +1783,7 @@ main.check-user-page {
   transform: rotate(55deg);
 }
 .user-icon svg {
-  stroke: var(--primary-950) !important;
+  stroke: var(--secondary) !important;
 }
 .bvgvkek {
   width: fit-content;
@@ -1792,22 +1869,33 @@ main.check-user-page {
   margin-bottom: 1rem;
 }
 #visa-form input {
-  height: 48px !important;
-  border: 1px solid var(--primary-500);
-  color: var(--primary-900);
-  background-color: transparent !important;
+  height: 64px !important;
+  border: none;
+  color: #032545 !important;
+  background-color: #fff !important;
   outline: 0 !important;
-  font-size: 18px !important;
-  font-weight: 700;
+  font-size: 16px !important;
+  border-radius: 8px !important;
+  font-weight: 400;
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 4px 4px;
+}
+#visa-form .data-body-btn {
+  background-color: var(--secondary) !important;
+}
+#visa-form .data-body-btn:hover {
+  background-color: var(--primary-700) !important;
 }
 #visa-form input::placeholder {
-  color: var(--primary-300);
-  font-size: 18px !important;
-  font-weight: 700;
+  color: #032545 !important;
+  font-weight: 400;
+  font-size: 16px !important;
 }
 #visa-form input:focus {
-  border: 1px solid var(--secondary-800);
-  box-shadow: none !important;
+  border: none;
+  box-shadow: rgba(6, 61, 213, 0.24) 0px 3px 8px;
+}
+#visa-form [data-sys-text] {
+  display: none !important;
 }
 #visa-form [data-bc-section] {
   margin-bottom: 10px;
@@ -1833,7 +1921,14 @@ main.check-user-page {
   align-items: center;
 }
 .flight__list__layout .next-prev-container {
-  justify-content: space-between !important;
+  justify-content: end !important;
+}
+.sort-items .active-sort,
+.sort-items li:hover {
+  color: var(--secondary) !important;
+}
+.sort-items .active-sort {
+  font-weight: 700;
 }
 .flight__list__layout
   .flight-summary-info.color_white
@@ -1920,13 +2015,19 @@ main.check-user-page {
   justify-content: center;
 }
 header a[aria-label="Instagram"] svg {
-  transform: scale(1.13) !important;
+  transform: scale(1.22) !important;
 }
-
+header a[aria-label="linkedin"] {
+  width: 27px !important;
+}
 .main-login-container {
   width: 100%;
 }
-header .lg\:\!flex a.text-primary-950{
+.mail .setsp:hover .aconvg svg path {
+  stroke: #fff !important;
+  fill: var(--secondary) !important;
+}
+header .lg\:\!flex a.text-primary-950 {
   position: relative !important;
   transform: unset !important;
   -webkit-transform: unset !important;
@@ -1934,14 +2035,19 @@ header .lg\:\!flex a.text-primary-950{
   -ms-transform: unset !important;
   -o-transform: unset !important;
 }
-header .lg\:\!flex a.text-primary-950::before{
+.hasNot-login-icon svg {
+  stroke: var(--secondary) !important;
+  fill: var(--secondary);
+}
+
+header .lg\:\!flex a.text-primary-950::before {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 3px;
   top: 104%;
-  background: linear-gradient(to right, var(--primary), transparent);
+  background: linear-gradient(to right, var(--secondary), transparent);
   opacity: 0;
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
@@ -1954,12 +2060,229 @@ header .lg\:\!flex a.text-primary-950::before{
   -ms-border-radius: 55px !important;
   -o-border-radius: 55px !important;
 }
-header .lg\:\!flex a.text-primary-950:hover:before{
+header .lg\:\!flex a.text-primary-950:hover:before {
   opacity: 1 !important;
 }
-header .lg\:\!flex a.text-primary-950:hover{
+header .lg\:\!flex a.text-primary-950:hover {
   color: var(--primary);
 }
-.h60{
+.h60 {
   height: 60px !important;
+}
+.hoverd-s:hover {
+  color: var(--secondary) !important;
+}
+button.bg-secondary:hover {
+  background-color: var(--primary);
+}
+.w-50 {
+  width: 50%;
+}
+.searchHistory-content {
+  margin-bottom: 0 !important;
+}
+.api-message .success {
+  color: var(--secondary) !important;
+}
+.article-bc-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: #fdfdfd1f;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  left: 0;
+  top: 0;
+}
+
+.py-66 {
+  padding: 86px 0 !important;
+}
+.article-bc-section p img {
+  display: none;
+}
+.w-570 {
+  width: 570px !important;
+}
+.justify-end {
+  justify-content: end;
+}
+.h-160 {
+  height: 160px;
+}
+.set-mt-footer .mt-\[-145px\] {
+  margin-top: -145px !important;
+}
+/* ___________________________ */
+.footer {
+  width: 100% !important;
+}
+.aconvg {
+  width: 56px !important;
+  height: 56px !important;
+  background-color: white !important;
+}
+.setsp:hover .aconvg {
+  background-color: var(--secondary) !important;
+}
+.setsp:hover .aconvg svg path {
+  fill: #fff !important;
+}
+header a[aria-label="linkedin"] svg {
+  transform: scale(2.15) translateX(3px);
+  width: 24px;
+  height: 24px;
+}
+#search_engine .reserve-search button {
+  border-radius: 5px !important;
+}
+.image-cntr:hover img:first-child {
+  display: none !important;
+}
+.image-cntr img:nth-child(2) {
+  opacity: 0;
+}
+.image-cntr:hover img:nth-child(2),
+.image-cntr:hover img:last-child {
+  display: block;
+  opacity: 1;
+  animation: 0.55s ease-in-out forwards fadeIn;
+}
+.image-cntr,
+.image-cntr img {
+  transition: all 0.35s ease-in-out !important;
+}
+.image-cntr {
+  width: fit-content !important;
+  transition: all 0.35s ease-in-out !important;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.mt4 {
+  margin-top: 3.5px !important;
+}
+.flight__list__layout li .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.flight__list__layout li .container input:checked ~ .checkmark {
+  background-color: var(--secondary);
+}
+.flight__list__layout .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1.5px solid #e5e5e5;
+}
+.flight__list__layout a,
+.flight__list__layout i,
+.flight__list__layout span {
+  display: inline-block;
+  font-style: normal;
+  vertical-align: middle;
+}
+.flight__list__layout li .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.flight__list__layout li .container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.flight__list__layout .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.passengerbox {
+  position: absolute;
+  z-index: 30 !important;
+}
+
+.Login_Informati {
+  background-color: transparent !important;
+}
+.set-cst .hasNot-login-icon svg {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+.searchbox-load-success.set-cst .hasNot-login-icon svg {
+  stroke: var(--secondary) !important;
+  fill: var(--secondary) !important;
+}
+.step-nav .active,
+.time-left {
+  color: var(--secondary) !important;
+}
+.step-nav .active .icon {
+  border-color: var(--secondary) !important;
+  color: var(--secondary) !important;
+}
+#search_engine .second-room-type {
+  top: -30px;
+  position: absolute;
+  padding: 0.4rem !important;
+  background-color: var(--secondary);
+  color: #fff !important;
+  left: 0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+#search_engine .second-room-type,
+#search_engine .second-room-type div,
+#search_engine .second-room-type span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search_engine .second-room-type:hover {
+  background-color: var(--primary);
+}
+.ul-list .w-3.h-3 {
+  width: 16px !important;
+  height: 16px !important;
+}
+#search_engine .Basis_Date_Box input {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+#search_engine .reservation-item li.active-module .module-name {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+.w-70 {
+  width: 70%;
+}
+header .login-btn-content button,
+header .bottom-content .action-loading,
+header .login-btn {
+  background-color: var(--secondary) !important;
+}
+.swiper-engine .swiper-pagination-bullet-active {
+  background-color: var(--secondary) !important;
+}
+.swiper-engine .swiper-pagination {
+  top: 85%;
 }

@@ -274,17 +274,28 @@
                     <article
                       class="w-full group Tripcrs-article mt-10 flex flex-col gap-6"
                     >
-                      <img
-                        loading="lazy"
-                        width="327"
-                        height="93"
-                        src="[##cms.cms.cdn##]/images/Tripcrs-lg.png"
-                        alt="Tripcrs"
-                        class="w-[327px] h-[93px] pointer-events-none"
-                      />
+                    <h2 class="text-white setscd">Trip <span>CRS</span></h2>
+                      <!-- <div class="image-cntr">
+                        <img
+                          loading="lazy"
+                          width="327"
+                          height="93"
+                          src="[##cms.cms.cdn##]/images/Tripcrs-lg.png"
+                          alt="Tripcrs"
+                          class="w-[327px] h-[93px] pointer-events-none"
+                        />
+                        <img
+                          loading="lazy"
+                          width="327"
+                          height="93"
+                          src="[##cms.cms.cdn##]/images/Tripcrs-lg2.png"
+                          alt="Tripcrs"
+                          class="w-[327px] hidden h-[93px] pointer-events-none"
+                        />
+                      </div> -->
                       <basis core="print" datamembername="db.main-article">
                         <face filter="Question in('introduction')">
-                          <div class="text-white line-clamp-2">@largetext</div>
+                          <div class="text-white line-clamp-2 text-lg">@largetext</div>
                         </face>
                       </basis>
 
@@ -330,7 +341,7 @@
         </div>
       </section>
 
-      <section class="after-login-section hidden">
+      <section class="after-login-section hidden" data-credit="true">
         <div
           class="items-center relative flex flex-col gap-3 justify-center w-full"
         >
@@ -364,13 +375,14 @@
                   </div>
                 </div>
               </div>
-              <div class="w-[28%] h-[395px] mt-2 overflow-hidden">
+              <div class="w-[28%] h-[395px] mt4 overflow-hidden">
                 <basis core="print" datamembername="db.slider-flight">
                   <layout>
                     <div
                       class="swiper-engine swiper-engine-fl flight swiper items-center relative w-full h-full"
                     >
                       <div class="swiper-wrapper">@child</div>
+                      <div class="swiper-pagination"></div>
                       <div
                         class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
                       >
@@ -426,6 +438,7 @@
                       class="swiper-engine swiper-engine-h hotel swiper items-center relative w-full h-full"
                     >
                       <div class="swiper-wrapper">@child</div>
+                      <div class="swiper-pagination"></div>
                       <div
                         class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
                       >
@@ -481,6 +494,7 @@
                       class="swiper-engine swiper-engine-fh flightHotel swiper items-center relative w-full h-full"
                     >
                       <div class="swiper-wrapper">@child</div>
+                      <div class="swiper-pagination"></div>
                       <div
                         class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
                       >
@@ -532,32 +546,12 @@
                 </basis>
               </div>
             </div>
-            <div class="limit-section grid grid-cols-4 gap-2">
-              <a href="" class="w-full flex flex-col p-3 rounded-lg">
-                <span class="text-sm">AVALABLE LIMIT</span>
-                <p class="text-xl font-bold">11,934.07 USD</p>
-              </a>
-              <a href="" class="w-full flex flex-col p-3 rounded-lg">
-                <span class="text-sm">AVALABLE LIMIT</span>
-                <p class="text-xl font-bold">11,934.07 USD</p>
-              </a>
-              <a href="" class="w-full flex flex-col p-3 rounded-lg">
-                <span class="text-sm">AVALABLE LIMIT</span>
-                <p class="text-xl font-bold">11,934.07 USD</p>
-              </a>
-              <a href="" class="w-full flex flex-col p-3 rounded-lg">
-                <span class="text-sm">AVALABLE LIMIT</span>
-                <p class="text-xl font-bold">11,934.07 USD</p>
-              </a>
-            </div>
+            <basis core="call" file="/agency_credit.inc" lid="2" run="atclient" triggers="cms.get_agency_counter_credit" if="{##cms.get_agency_counter_credit##}"></basis>
           </div>
         </div>
       </section>
 
-      <script
-        src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js"
-        type="text/javascript"
-      ></script>
+   
       <basis core="call" lid="2" file="footer.inc" />
     </main>
   </body>
