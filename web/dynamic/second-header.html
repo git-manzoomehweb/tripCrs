@@ -1,0 +1,383 @@
+<basis core="call" file="Client_CheckRkey.inc" lid="2"></basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="5"
+  lid="2"
+  usedforid="[##cms.cms.ownerid##]"
+>
+  <member name="info" type="view"></member>
+</basis>
+<header
+  class="w-full z-20 bg-transparent flex justify-center items-center lg:!px-0"
+>
+  <div
+    class="w-full flex items-center lg:!justify-between px-5 transition-all duration-300 lg:px-5 py-[22px] xl:w-[1280px] xl:!px-0 border-b border-primary-100 max-sm:!border-none"
+  >
+    <div
+      class="flex items-center gap-3 w-full max-sm:!justify-between lg:!w-fit"
+    >
+      <a href="/" class="hover:transition-all hover:scale-110">
+        <img
+          loading="lazy"
+          width="86"
+          height="25"
+          src="[##cms.cms.cdn##]/images/logo-en.png"
+          aria-label="crs-logo"
+          decoding="async"
+          alt="logo"
+          class="logo"
+        />
+      </a>
+      <div class="flex items-center gap-1 lg:px-5">
+        <basis core="print" datamembername="db.info">
+          <face filter="TypeID=240">
+            <a
+              href="tel:@text"
+              class="lg:!flex hidden group items-center gap-3 text-primary-950"
+            >
+              <span class="group-hover:scale-125 transition-all">
+                <svg
+                  width="21"
+                  height="22"
+                  viewBox="0 0 21 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.5429 2.16699L12.2023 2.24022C15.7844 2.63801 18.6144 5.46413 19.0161 9.04627L19.0901 9.70567L17.7714 9.85349L17.6974 9.19418C17.3649 6.22843 15.0217 3.8884 12.0559 3.55903L11.3965 3.4858L11.5429 2.16699Z"
+                    fill="#032545"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.6004 5.25708L12.2518 5.38359C14.0842 5.73953 15.5158 7.17251 15.8726 9.0042L15.9994 9.65536L14.697 9.90907L14.5702 9.2579C14.3166 7.95624 13.2996 6.93884 11.9988 6.68617L11.3474 6.55966L11.6004 5.25708Z"
+                    fill="#032545"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.25289 2.02271L8.72672 6.79442L7.2008 9.44448C7.25504 9.6045 7.34224 9.83477 7.47215 10.1089C7.73703 10.6678 8.17481 11.399 8.86446 12.0886C9.59497 12.8192 10.3702 13.2981 10.9635 13.594C11.2586 13.7412 11.5062 13.8419 11.677 13.9049L14.3195 12.3833L19.2183 15.9957L18.9324 16.5064C18.1139 17.969 17.069 19.0139 15.6064 19.8324L15.4694 19.9091L15.3127 19.9163C10.9969 20.1138 7.28593 17.767 4.78852 14.8623C3.53553 13.405 2.56707 11.7851 1.9643 10.2259C1.36609 8.67849 1.10649 7.13358 1.34688 5.84822L1.36795 5.73555L1.42561 5.63648C2.25252 4.21557 3.32009 3.15638 4.73453 2.32675L5.25289 2.02271Z"
+                    fill="#032545"
+                  /></svg
+              ></span>
+              @text
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.info">
+          <face filter="text in('Twitter')">
+            <a
+              href="@largetext"
+              target="_blank"
+              class="lg:!flex hidden hover:scale-125 transition-all"
+            >
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20.1727 5.21225C20.0751 5.05953 19.8985 4.97397 19.7163 5.00433L17.8736 5.27849C17.3538 4.69705 15.7622 3.21401 13.5661 3.87825C11.6645 4.46153 10.7592 6.48369 10.7049 8.02745C8.34697 7.59505 6.14633 6.43401 4.46089 4.72281C4.34037 4.60045 4.16097 4.55537 3.99537 4.60689C3.82977 4.65841 3.70833 4.79825 3.67981 4.96845C2.83801 9.97599 3.92545 13.3184 7.09945 15.416C5.92093 16.0655 4.56945 16.3994 3.23913 16.3516C3.05697 16.3507 2.89045 16.4473 2.81133 16.6101C2.73129 16.772 2.75521 16.9662 2.87113 17.106C4.23457 18.7454 6.80321 19.3076 8.85021 19.3076C9.08665 19.3076 9.31573 19.3002 9.53561 19.2864C12.5164 19.1006 14.9737 17.8696 16.6417 15.7251C18.2213 13.6946 18.9859 10.9043 18.7936 7.84529L18.7881 7.80021L20.1681 5.71273C20.2683 5.56185 20.2702 5.36497 20.1727 5.21225Z"
+                  fill="#032545"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+        <basis core="print" datamembername="db.info">
+          <face filter="text in('linkedin')">
+            <a
+              aria-label="linkedin"
+              href="@largetext"
+              target="_blank"
+              class="lg:!flex hidden linkedin hover:scale-125 transition-all"
+            >
+              <svg
+                width="49"
+                height="49"
+                viewBox="0 0 49 49"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  class="transition-all duration-300 group-hover:fill-primary-200"
+                  d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
+                  fill="#032545"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+        <basis core="print" datamembername="db.info">
+          <face filter="text in('Instagram')">
+            <a
+              aria-label="Instagram"
+              href="@largetext"
+              target="_blank"
+              class="lg:!flex hidden hover:scale-125 transition-all"
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M24.3582 22.2808C22.9617 22.2808 21.8254 23.4151 21.8254 24.8108C21.8254 26.2064 22.9617 27.3408 24.3582 27.3408C25.7548 27.3408 26.8901 26.2064 26.8901 24.8108C26.8901 23.4151 25.7548 22.2808 24.3582 22.2808Z"
+                  fill="#032545"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M28.9793 21.2051C28.4549 21.2051 28.0271 20.78 28.0271 20.2584C28.0271 19.7349 28.4549 19.3099 28.9793 19.3099C29.5037 19.3099 29.9306 19.7349 29.9306 20.2584C29.9306 20.78 29.5037 21.2051 28.9793 21.2051ZM24.3609 28.7224C22.2044 28.7224 20.449 26.9689 20.449 24.8124C20.449 22.6559 22.2044 20.9024 24.3609 20.9024C26.5183 20.9024 28.2727 22.6559 28.2727 24.8124C28.2727 26.9689 26.5183 28.7224 24.3609 28.7224ZM28.384 15.7688H20.6238C17.7176 15.7688 15.7644 17.813 15.7644 20.8564V28.1612C15.7644 31.2036 17.7176 33.2488 20.6238 33.2488H28.3831C31.2903 33.2488 33.2444 31.2036 33.2444 28.1612V20.8564C33.2444 17.813 31.2912 15.7688 28.384 15.7688Z"
+                  fill="#032545"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+      </div>
+    </div>
+    <div class="lg:!flex hidden items-center gap-7">
+      <a
+        href="/"
+        class="text-primary-950 text-base hover:scale-110 transition-all"
+      >
+        Home
+      </a>
+      <a
+        href="/services"
+        class="text-primary-950 text-base hover:scale-110 transition-all"
+      >
+        Services
+      </a>
+      <a
+        href="/about-us"
+        class="text-primary-950 text-base hover:scale-110 transition-all"
+      >
+        About us
+      </a>
+      <a
+        href="/contact-us"
+        class="text-primary-950 text-base hover:scale-110 transition-all"
+      >
+        Cantact us
+      </a>
+      <a
+        href="/b2b-register-form"
+        class="text-primary-950 text-base hover:scale-110 transition-all"
+        >B2B Register</a
+      >
+    </div>
+    <div class="flex items-center ">
+      <basis core="print" datamembername="db.info">
+        <face filter="text in('Twitter')">
+          <a
+            href="@largetext"
+            target="_blank"
+            class="lg:!hidden flex hover:scale-125 transition-all"
+          >
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20.1727 5.21225C20.0751 5.05953 19.8985 4.97397 19.7163 5.00433L17.8736 5.27849C17.3538 4.69705 15.7622 3.21401 13.5661 3.87825C11.6645 4.46153 10.7592 6.48369 10.7049 8.02745C8.34697 7.59505 6.14633 6.43401 4.46089 4.72281C4.34037 4.60045 4.16097 4.55537 3.99537 4.60689C3.82977 4.65841 3.70833 4.79825 3.67981 4.96845C2.83801 9.97599 3.92545 13.3184 7.09945 15.416C5.92093 16.0655 4.56945 16.3994 3.23913 16.3516C3.05697 16.3507 2.89045 16.4473 2.81133 16.6101C2.73129 16.772 2.75521 16.9662 2.87113 17.106C4.23457 18.7454 6.80321 19.3076 8.85021 19.3076C9.08665 19.3076 9.31573 19.3002 9.53561 19.2864C12.5164 19.1006 14.9737 17.8696 16.6417 15.7251C18.2213 13.6946 18.9859 10.9043 18.7936 7.84529L18.7881 7.80021L20.1681 5.71273C20.2683 5.56185 20.2702 5.36497 20.1727 5.21225Z"
+                fill="#032545"
+              />
+            </svg>
+          </a>
+        </face>
+      </basis>
+      <basis core="print" datamembername="db.info">
+        <face filter="text in('linkedin')">
+          <a
+            aria-label="linkedin"
+            href="@largetext"
+            target="_blank"
+            class="lg:!hidden linkedin flex hover:scale-125 transition-all"
+          >
+            <svg
+              width="49"
+              height="49"
+              viewBox="0 0 49 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                class="transition-all duration-300 group-hover:fill-primary-200"
+                d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
+                fill="#032545"
+              />
+            </svg>
+          </a>
+        </face>
+      </basis>
+      <basis core="print" datamembername="db.info">
+        <face filter="text in('Instagram')">
+          <a
+            aria-label="Instagram"
+            href="@largetext"
+            target="_blank"
+            class="lg:!hidden flex hover:scale-125 transition-all"
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.3582 22.2808C22.9617 22.2808 21.8254 23.4151 21.8254 24.8108C21.8254 26.2064 22.9617 27.3408 24.3582 27.3408C25.7548 27.3408 26.8901 26.2064 26.8901 24.8108C26.8901 23.4151 25.7548 22.2808 24.3582 22.2808Z"
+                fill="#032545"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M28.9793 21.2051C28.4549 21.2051 28.0271 20.78 28.0271 20.2584C28.0271 19.7349 28.4549 19.3099 28.9793 19.3099C29.5037 19.3099 29.9306 19.7349 29.9306 20.2584C29.9306 20.78 29.5037 21.2051 28.9793 21.2051ZM24.3609 28.7224C22.2044 28.7224 20.449 26.9689 20.449 24.8124C20.449 22.6559 22.2044 20.9024 24.3609 20.9024C26.5183 20.9024 28.2727 22.6559 28.2727 24.8124C28.2727 26.9689 26.5183 28.7224 24.3609 28.7224ZM28.384 15.7688H20.6238C17.7176 15.7688 15.7644 17.813 15.7644 20.8564V28.1612C15.7644 31.2036 17.7176 33.2488 20.6238 33.2488H28.3831C31.2903 33.2488 33.2444 31.2036 33.2444 28.1612V20.8564C33.2444 17.813 31.2912 15.7688 28.384 15.7688Z"
+                fill="#032545"
+              />
+            </svg>
+          </a>
+        </face>
+      </basis>
+
+      <basis
+        core="group"
+        name="valid-rkey"
+        if="'[##db.checkrkey.checked##]'='true'"
+      >
+        <basis core="call" file="authentication/modal" lid="2"></basis>
+      </basis>
+      <basis
+        core="group"
+        name="valid-rkey"
+        if="'[##db.checkrkey.checked##]'='false'"
+      >
+        <div class="px-5 lg:!flex hidden">
+          <div class="px-5"></div>
+        </div>
+      </basis>
+
+      <button aria-label="mobile-menu" class="bars3 lg:!hidden flex">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.6667 16.6667H3.33333C2.87333 16.6667 2.5 16.2942 2.5 15.8333C2.5 15.3725 2.87333 15 3.33333 15H16.6667C17.1267 15 17.5 15.3725 17.5 15.8333C17.5 16.2942 17.1267 16.6667 16.6667 16.6667Z"
+            fill="#040481"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.6667 4.99992H3.33333C2.87333 4.99992 2.5 4.62742 2.5 4.16659C2.5 3.70575 2.87333 3.33325 3.33333 3.33325H16.6667C17.1267 3.33325 17.5 3.70575 17.5 4.16659C17.5 4.62742 17.1267 4.99992 16.6667 4.99992Z"
+            fill="#040481"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.6667 10.8334H3.33333C2.87333 10.8334 2.5 10.4609 2.5 10.0001C2.5 9.53925 2.87333 9.16675 3.33333 9.16675H16.6667C17.1267 9.16675 17.5 9.53925 17.5 10.0001C17.5 10.4609 17.1267 10.8334 16.6667 10.8334Z"
+            fill="#040481"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<nav
+  class="header-menu w-screen h-screen !flex justify-center items-center gap-12 fixed z-30 px-5 py-10 overflow-scroll transition-all duration-300 translate-x-[1724px]"
+>
+  <button
+    type="button"
+    aria-label="close-menu"
+    class="header-menu-close absolute top-6 right-6"
+  >
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.81295 6.50009L12.7277 1.58528C13.0908 1.22221 13.0908 0.635366 12.7277 0.2723C12.3646 -0.0907666 11.7778 -0.0907666 11.4148 0.2723L6.5 5.18711L1.58525 0.2723C1.22219 -0.0907666 0.635353 -0.0907666 0.272294 0.2723C-0.0907647 0.635366 -0.0907647 1.22221 0.272294 1.58528L5.18704 6.50009L0.272294 11.415C-0.0907647 11.778 -0.0907647 12.3649 0.272294 12.7279C0.453359 12.909 0.691065 13 0.928771 13C1.16648 13 1.40418 12.909 1.58525 12.7279L6.5 7.81317L11.4148 12.7279C11.5958 12.909 11.8335 13 12.0712 13C12.3089 13 12.5466 12.909 12.7277 12.7279C13.0908 12.3649 13.0908 11.778 12.7277 11.415L7.81295 6.50009Z"
+        fill="#032545"
+      ></path>
+    </svg>
+  </button>
+  <div class="flex flex-col gap-12 items-center">
+    <a href="/" class="text-primary-950 text-lg hover:scale-110 transition-all">
+      Home
+    </a>
+    <a
+      href="/services"
+      class="text-primary-950 text-lg hover:scale-110 transition-all"
+    >
+      Services
+    </a>
+    <a
+      href="/about-us"
+      class="text-primary-950 text-lg hover:scale-110 transition-all"
+    >
+      About us
+    </a>
+    <a
+      href="/contact-us"
+      class="text-primary-950 text-lg hover:scale-110 transition-all"
+    >
+      Cantact us
+    </a>
+    <a
+      href="/b2b-register-form"
+      class="text-primary-950 text-lg hover:scale-110 transition-all"
+      >B2B Register</a
+    >
+    <a
+      href="/"
+      class="hover:transition-all absolute top-7 left-7 hover:scale-110"
+    >
+      <img
+        loading="lazy"
+        width="86"
+        height="25"
+        src="[##cms.cms.cdn##]/images/logo-en.png"
+        aria-label="crs-logo"
+        decoding="async"
+        alt="logo"
+        class="logo"
+      />
+    </a>
+  </div>
+</nav>

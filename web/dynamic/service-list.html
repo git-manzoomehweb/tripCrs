@@ -1,0 +1,238 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377905"
+>
+  <member name="White-label" type="view" order="ord" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="214829"
+>
+  <member
+    name="all-target-services"
+    propertyid="7246"
+    type="list"
+    order="ord"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377906"
+>
+  <member name="Selling" type="view" order="ord" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377907"
+>
+  <member name="Webservice" type="view" order="ord" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="media"
+  lid="2"
+  sourcemid="1"
+  usedforid="2378222"
+>
+  <member name="our-partners" type="list" format="4" />
+</basis>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(CRS Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Experience the best and easiets trip with CRS  Travel Agency.)##]"
+    />
+    <!-- Title & Description -->
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body>
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full flex justify-center">
+      <section
+        class="lg:px-5 py-[22px] flex flex-col gap-4 xl:w-[1280px] xl:!px-0"
+      >
+        <div class="flex w-full flex-col gap-3 justify-center">
+          <h1 class="font-bold text-center mb-3 text-xl">Our Services</h1>
+          <div
+            class="w-full bg-primary-50 service-list rounded-xl p-5 flex justify-center items-center gap-7"
+          >
+            <basis core="print" datamembername="db.all-target-services">
+              <face>
+                <a href="@link" class="flex flex-col gap-4">
+                  <img src="@image" alt="@title" loading="lazy" />
+                  <p class="font-bold text-xl">@title</p>
+
+                  <div class="text-zinc-500 text-xs line-clamp-1">
+                    @prp_7246
+                  </div>
+                </a>
+              </face>
+            </basis>
+
+            <!-- <a href="/about-us#about-us-section" class="flex flex-col gap-4">
+              <span
+                class="bg-primary-950 w-12 h-12 rounded-full flex justify-center items-center"
+              >
+                <svg
+                  width="28"
+                  height="29"
+                  viewBox="0 0 28 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.8756 24.7373C14.8756 24.9229 15.0323 25.0733 15.2256 25.0733H17.6056C17.7989 25.0733 17.9556 24.9229 17.9556 24.7373V20.5048C17.9556 20.3192 17.7989 20.1688 17.6056 20.1688H15.2256C15.0323 20.1688 14.8756 20.3192 14.8756 20.5048V24.7373Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.82095 21.5125H8.47695C7.99395 21.5125 7.60195 21.1362 7.60195 20.6725C7.60195 20.2088 7.99395 19.8325 8.47695 19.8325H9.82095C10.304 19.8325 10.696 20.2088 10.696 20.6725C10.696 21.1362 10.304 21.5125 9.82095 21.5125ZM4.62812 16.6595C4.57221 16.6595 4.51666 16.6575 4.46147 16.6539C4.2403 16.6391 4.03662 16.7952 4.03662 17.008V22.3738C4.03662 23.8622 5.30245 25.073 6.85762 25.073H12.775C12.9683 25.073 13.125 24.9225 13.125 24.737V19.3285C13.125 18.8648 13.517 18.4885 14 18.4885H18.83C19.313 18.4885 19.705 18.8648 19.705 19.3285V24.737C19.705 24.9225 19.8617 25.073 20.055 25.073H21.1201C22.6765 25.073 23.9423 23.8622 23.9423 22.3738V17.0077C23.9423 16.7957 23.7402 16.6407 23.5197 16.6547C23.4704 16.6578 23.4207 16.6595 23.3706 16.6595H4.62812Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M24.0933 6.04417C24.1015 5.66225 23.9522 5.30161 23.6733 5.02721C23.391 4.75169 23.013 4.59937 22.6093 4.59937H5.43597C4.61814 4.59937 3.95081 5.23777 3.95081 6.02177V7.93716C3.95081 8.12265 4.10738 8.27304 4.30061 8.27316L23.7004 8.28397C23.8908 8.28408 24.0464 8.13798 24.0505 7.95519L24.0933 6.04417Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M25.0367 13.0948L24.3325 10.2233C24.2953 10.0716 24.1543 9.96436 23.9919 9.96427L4.00956 9.95337C3.84705 9.95329 3.70586 10.0606 3.66866 10.2124L2.96217 13.0959C2.84317 13.5898 2.961 14.0994 3.28767 14.4948C3.6155 14.8902 4.10317 15.1164 4.62817 15.1164H23.3707C23.8957 15.1164 24.3845 14.8902 24.7124 14.4948C25.039 14.0994 25.158 13.5898 25.0367 13.0948Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </span>
+              <basis core="print" datamembername="db.selling">
+                <face filter="Question in('Title')">
+                  <p class="font-bold text-xl">@Answer</p>
+                </face>
+              </basis>
+              <basis core="print" datamembername="db.selling">
+                <face filter="TypeID=250 and RowNumber=2">
+                  <div class="text-zinc-500 text-xs line-clamp-1">
+                    @largetext
+                  </div>
+                </face>
+              </basis>
+            </a>
+
+            <a href="/about-us#about-us-section" class="flex flex-col gap-4">
+              <span
+                class="bg-primary-950 w-12 h-12 rounded-full flex justify-center items-center"
+              >
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22.05 15.61V13.055C22.5984 13.23 23.0067 13.7317 23.0067 14.3383C23.0067 14.945 22.5984 15.435 22.05 15.61ZM16.6834 13.0783C16.205 13.0783 15.8084 12.6933 15.8084 12.2033V12.1917C15.8084 11.7133 16.205 11.3167 16.6834 11.3167C17.1617 11.3167 17.5584 11.7133 17.5584 12.1917C17.5584 12.6817 17.1617 13.0783 16.6834 13.0783ZM16.275 16.9517C15.715 17.5233 14.875 17.8617 14 17.8617C13.2184 17.8617 12.4134 17.5933 11.76 16.9867C11.3984 16.66 11.3867 16.1 11.7134 15.75C12.04 15.4 12.6 15.3767 12.95 15.7033C13.6034 16.31 14.56 16.205 15.0267 15.7383C15.3534 15.3883 15.9134 15.3767 16.2634 15.715C16.6017 16.0533 16.6134 16.6133 16.275 16.9517ZM10.4417 12.2033V12.1917C10.4417 11.7133 10.8267 11.3167 11.3167 11.3167C11.795 11.3167 12.1917 11.7133 12.1917 12.1917C12.1917 12.6817 11.795 13.0783 11.3167 13.0783C10.8267 13.0783 10.4417 12.6933 10.4417 12.2033ZM5.93841 15.61C5.40174 15.435 4.99341 14.945 4.99341 14.3383C4.99341 13.7317 5.40174 13.23 5.93841 13.055V15.61ZM21.98 11.2583C21.6534 8.925 19.9617 7.39667 17.5584 7.37333V3.5C17.5584 3.02167 17.1734 2.625 16.6834 2.625C16.205 2.625 15.8084 3.02167 15.8084 3.5V7.36167H12.1917V5.47167C12.1917 4.98167 11.795 4.59667 11.3167 4.59667C10.8267 4.59667 10.4417 4.98167 10.4417 5.47167V7.37333C8.03841 7.39667 6.34674 8.925 6.02007 11.2583C4.45674 11.4333 3.24341 12.74 3.24341 14.3383C3.24341 15.9367 4.45674 17.2433 6.02007 17.4067C6.34674 19.7633 8.06174 21.3033 10.5001 21.3033H17.5C19.9384 21.3033 21.6417 19.7633 21.98 17.4067C23.5434 17.2433 24.7567 15.9367 24.7567 14.3383C24.7567 12.74 23.5434 11.4333 21.98 11.2583Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.1634 23.7451C17.8602 22.9891 15.9795 22.554 14.0055 22.554C12.0245 22.554 10.1415 22.9891 8.8372 23.7451C8.4207 23.9878 8.27837 24.5233 8.52103 24.941C8.7637 25.3598 9.29803 25.5021 9.71687 25.2583C10.7447 24.661 12.3489 24.304 14.0055 24.304C15.6809 24.304 17.2407 24.6516 18.2837 25.2583C18.4225 25.3388 18.573 25.3761 18.7224 25.3761C19.0245 25.3761 19.3185 25.221 19.4795 24.941C19.7222 24.5233 19.5799 23.9878 19.1634 23.7451Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </span>
+              <basis core="print" datamembername="db.Webservice">
+                <face filter="Question in('Title')">
+                  <p class="font-bold text-xl">@Answer</p>
+                </face>
+              </basis>
+              <basis core="print" datamembername="db.Webservice">
+                <face filter="TypeID=250 and RowNumber=2">
+                  <div class="text-zinc-500 text-xs line-clamp-1">
+                    @largetext
+                  </div>
+                </face>
+              </basis>
+            </a> -->
+          </div>
+        </div>
+        <div class="flex w-full flex-col gap-3 justify-center">
+          <h2 class="font-bold text-center text-xl mb-3 mt-3">Our Partners</h2>
+          <basis core="print" datamembername="db.our-partners">
+            <layout>
+              <div
+                class="w-full our-partners overflow-hidden grid grid-cols-6 gap-7"
+              >
+                @child
+              </div>
+            </layout>
+            <face>
+              <article class="p-5 rounded-xl bg-primary-50">
+                <div class="container rounded-xl">
+                  <img
+                    loading="lazy"
+                    width="150"
+                    height="80"
+                    src="@largeIMG"
+                    alt="@name"
+                  />
+                </div>
+              </article>
+            </face>
+          </basis>
+        </div>
+      </section>
+    </main>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

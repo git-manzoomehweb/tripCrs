@@ -1,0 +1,425 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="all-articles"
+    type="list"
+    link="article.bc"
+    propertyid=""
+    perpage="20"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="283x177"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="18"
+  name="db"
+  usedforid="[##cms.query.catid##]"
+>
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+<basis core="dbsource" source="basiscore" mid="1" name="db" lid="2">
+  <member
+    name="listcategories"
+    type="tree"
+    request="cat"
+    parentid="[##cms.query.catid##]"
+    postsql="select * from [db.listcategories] where parentid in('[##cms.query.catid##]')"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="214814"
+>
+  <member
+    name="article-list1"
+    type="list"
+    link="article.bc"
+    propertyid="7244"
+    size="643x360"
+    perpage=""
+    typeid=""
+    order="ord"
+    postsql="select id , lid , Ord , title , link , [00643X00360prp] , prp_7244 from [db.article-list1] where id=2375338 "
+  />
+</basis>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(CRS Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Experience the best and easiets trip with CRS  Travel Agency.)##]"
+    />
+    <!-- Title & Description -->
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body>
+    <main class="w-auto bg-white dir-ltr">
+      <basis core="call" file="header.inc" lid="2" />
+      <section class="newslist-section w-full">
+        <div
+          class="newslist-bg self-stretch h-[232px] flex-col justify-start items-start flex"
+        >
+          <div
+            class="self-stretch w-[1280px] m-auto flex-col justify-start items-center flex max-xl:w-full max-xl:px-3"
+          >
+            <div
+              class="self-stretch h-[232px] px-6 pt-[61px] flex-col justify-start items-start gap-2.5 flex overflow-hidden max-xl:h-auto max-xl:pt-4"
+            >
+              <div
+                class="self-stretch flex-col justify-start items-center gap-3 flex"
+              >
+                <basis core="print" datamembername="db.scalar"
+                  ><face
+                    ><h1
+                      class="self-stretch text-center text-white text-5xl font-bold leading-10 max-xl:text-2xl"
+                    >
+                      @Column1
+                    </h1></face
+                  ></basis
+                >
+                <div
+                  class="self-stretch text-center text-white text-sm font-normal leading-tight"
+                >
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt -->
+                </div>
+                <div
+                  class="breadcrumbs w-full h-[43px] text-cente flex-col justify-start items-start gap-3 inline-flex"
+                >
+                  <ul
+                    itemscope=""
+                    itemtype="https://schema.org/BreadcrumbList"
+                    class="w-full text-center"
+                  >
+                    <li
+                      class="inline-block text-sm text-white font-normal"
+                      itemprop="itemListElement"
+                      itemscope=""
+                      itemtype="https://schema.org/ListItem"
+                    >
+                      <a
+                        class="text-white hover:text-primary-500 hover:text-primary-700"
+                        itemprop="item"
+                        href="/"
+                        aria-label="home"
+                        ><span itemprop="name">Home</span>
+                        <meta itemprop="position" content="1"
+                      /></a>
+                    </li>
+                    <basis core="print" datamembername="db.navigation">
+                      <face
+                        filter="RowNumber=max(RowNumber) and parentcatid<>213713"
+                      >
+                        <li
+                          class="inline-block text-sm text-white font-normal"
+                          itemprop="itemListElement"
+                          itemscope
+                          itemtype="https://schema.org/ListItem"
+                        >
+                          <span itemprop="name">@title</span
+                          ><meta itemprop="position" content="@rownumber" />
+                        </li>
+                      </face>
+                      <face filter="link is null and parentcatid<>213713">
+                        <li
+                          class="inline-block text-sm text-white font-normal"
+                          itemprop="itemListElement"
+                          itemscope
+                          itemtype="https://schema.org/ListItem"
+                        >
+                          <a
+                            class="text-white hover:text-primary-900"
+                            itemprop="item"
+                            href="/article-list.bc?catid=@parentcatid"
+                            aria-label="@title"
+                            ><span itemprop="name">@title</span
+                            ><meta itemprop="position" content="@rownumber"
+                          /></a>
+                        </li>
+                      </face>
+                      <face filter="parentcatid<>213713">
+                        <li
+                          class="inline-block text-sm text-white font-normal"
+                          itemprop="itemListElement"
+                          itemscope
+                          itemtype="https://schema.org/ListItem"
+                        >
+                          <a
+                            class="text-white hover:text-primary-900"
+                            itemprop="item"
+                            href="@link"
+                            aria-label="@title"
+                            ><span itemprop="name">@title</span
+                            ><meta itemprop="position" content="@rownumber"
+                          /></a>
+                        </li>
+                      </face>
+                    </basis>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <form
+              id="search-content-article"
+              action=""
+              class="seraching-form search-content search_content_form shadow-2xl p-3 -mt-[50px] bg-white rounded-lg justify-start items-center gap-1.5 inline-flex max-xl:w-full max-xl:mt-5 max-xl:block"
+            >
+              <div
+                class="w-[564px] h-[54px] px-3 py-2 bg-zinc-100 rounded-lg justify-start items-center gap-2.5 flex overflow-hidden max-xl:w-full max-xl:mb-4"
+              >
+                <input
+                  value=""
+                  id="search-content-name"
+                  class="grow shrink focus:outline-none basis-0 text-zinc-400 text-base font-normal leading-normal bg-inherit"
+                  placeholder="Search blog"
+                />
+              </div>
+              <div
+                class="w-[149px] h-[54px] bg-secondary-500 rounded-lg justify-center items-center gap-1 flex overflow-hidden max-xl:w-full"
+              >
+                <a
+                  href=""
+                  type="submit"
+                  aria-label="search content"
+                  class="w-full h-full anchor-form flex justify-center items-center text-center text-white text-base font-medium leading-normal bg-primary-950 cursor-pointer hover:bg-primary-700"
+                >
+                  search
+                </a>
+                <input type="hidden" value="2" name="lid" />
+                <input id="catidsearched" type="hidden" value="0" name="id" />
+              </div>
+              <ul
+                class="flex-col absolute overflow-hidden hidden w-full search-drop-down bg-white rounded-lg"
+              >
+                <div class="w-full flex flex-col overflow-auto h-178px">
+                  <basis core="list" datamembername="db.all-articles">
+                    <face>
+                      <li onclick="contentSearched('@title','@id')">
+                        @title
+                        <span class="hidden linkspan">/@link</span>
+                      </li>
+                    </face>
+                    <face filter="link is null">
+                      <li onclick="contentSearched('@title','@id')">
+                        @title
+                        <span class="hidden linkspan"
+                          >/article.bc?lid=1&id=@id</span
+                        >
+                      </li>
+                    </face>
+                  </basis>
+                </div>
+              </ul>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="w-[1280px] block m-auto max-xl:w-full max-xl:px-3 max-xl:pt-[50px]"
+        >
+          <div class="block w-full">
+            <div
+              class="flex-col justify-start items-center gap-[100px] pt-[70px] flex max-xl:block"
+            >
+              <basis core="print" datamembername="db.listcategories">
+                <layout
+                  ><ul
+                    class="category-items self-stretch justify-center items-center gap-3 inline-flex max-xl:grid max-xl:grid-cols-3 max-xl:mb-5"
+                  >
+                    <li
+                      class="active-category group px-6 py-2 rounded-[34px] flex-col justify-center items-center gap-2.5 inline-flex"
+                      data-catid="[##cms.query.catid##]"
+                    >
+                      <div
+                        class="self-stretch cursor-pointer text-center text-zinc-600 text-base font-normal leading-normal group-hover:text-secondary-600"
+                      >
+                        All
+                      </div>
+                    </li>
+                    @child
+                  </ul></layout
+                >
+                <face>
+                  <li
+                    class="group px-6 py-2 rounded-[34px] flex-col justify-center items-center gap-2.5 inline-flex"
+                    data-catid="@catid"
+                  >
+                    <div
+                      class="self-stretch cursor-pointer text-center text-zinc-600 text-base font-normal leading-normal group-hover:text-secondary-600"
+                    >
+                      @title
+                    </div>
+                  </li>
+                </face>
+              </basis>
+              <div
+                class="self-stretch flex-col justify-start items-start gap-[83px] flex max-xl:block"
+              >
+                <basis core="list" datamembername="db.article-list1">
+                  <layout>@child</layout>
+                  <face filter="link is null">
+                    <article class="max-xl:mb-4">
+                      <a
+                        class="group self-stretch justify-start items-center gap-[25px] inline-flex max-xl:block"
+                        href="article.bc?id=@id"
+                        aria-label="@title"
+                      >
+                        <figure class="max-xl:mb-2">
+                          <img
+                            class="w-[643px] h-[360px] rounded-lg max-xl:w-full max-xl:max-w-max max-xl:h-auto max-xl:m-auto max-xl:block"
+                            src="[##cms.cms.cdn##]/@00643X00360prp"
+                            width="643"
+                            height="360"
+                            alt="@title"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div
+                          class="w-[614px] self-stretch flex-col justify-start items-start gap-[11px] inline-flex max-xl:w-full"
+                        >
+                          <header class="self-stretch leading-loose">
+                            <h2
+                              class="text-zinc-900 text-2xl font-bold ectText--2 group-hover:text-secondary-600 max-xl:text-base max-xl:font-normal"
+                            >
+                              @title
+                            </h2>
+                          </header>
+                          <footer class="self-stretch">
+                            <span
+                              class="text-zinc-700 text-sm font-normal leading-tight clear-both ectText--10 max-xl:text-sm"
+                              >@prp_7244</span
+                            ><span
+                              class="text-primary-700 text-sm font-normal leading-tight group-hover:text-secondary-600"
+                              >Rade More</span
+                            >
+                          </footer>
+                        </div>
+                      </a>
+                    </article>
+                  </face>
+                  <face>
+                    <article class="max-xl:mb-4">
+                      <a
+                        class="group self-stretch justify-start items-center gap-[25px] inline-flex max-xl:block"
+                        href="@link"
+                        aria-label="@title"
+                      >
+                        <figure class="max-xl:mb-2">
+                          <img
+                            class="w-[643px] h-[360px] rounded-lg max-xl:w-full max-xl:max-w-max max-xl:h-auto max-xl:m-auto max-xl:block"
+                            src="[##cms.cms.cdn##]/@00643X00360prp"
+                            width="643"
+                            height="360"
+                            alt="@title"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div
+                          class="w-[614px] self-stretch flex-col justify-start items-start gap-[11px] inline-flex max-xl:w-full"
+                        >
+                          <header class="self-stretch leading-loose">
+                            <h2
+                              class="text-zinc-900 text-2xl font-bold ectText--2 group-hover:text-secondary-600 max-xl:text-base max-xl:font-normal"
+                            >
+                              @title
+                            </h2>
+                          </header>
+                          <footer class="self-stretch">
+                            <span
+                              class="text-zinc-700 text-sm font-normal leading-tight clear-both ectText--10 max-xl:text-sm"
+                              >@prp_7244</span
+                            ><span
+                              class="text-primary-700 text-sm font-normal leading-tight group-hover:text-secondary-600"
+                              >Rade More</span
+                            >
+                          </footer>
+                        </div>
+                      </a>
+                    </article>
+                  </face>
+                </basis>
+                <div class="item-loading hidden m-auto text-center">
+                  <div id="ballsWaveG">
+                    <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                    <div id="ballsWaveG_8" class="ballsWaveG"></div>
+                  </div>
+                </div>
+                <div
+                  class="load-articles self-stretch flex-col justify-start items-start gap-3 flex max-xl:block"
+                ></div>
+                <input
+                  class="catid"
+                  type="hidden"
+                  value="[##cms.query.catid##]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="clr"></div>
+      <basis core="call" file="footer.inc" lid="2" />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<section
+  class="relative px-5 pt-[80px] flex search-box-container en cstm justify-center w-full"
+>
+  <div class="w-full z-30 flex flex-col gap-3">
+    <div
+      class="w-full flex gap-3 flex-col-reverse p-2 rounded-xl bg-[#F2F2F280] items-center h-fit"
+    >
+      <div class="w-full z-20">
+        <basis
+          core="call"
+          file="search/engine/ver.1/Fa"
+          pageindexid="1"
+          lid="2"
+        ></basis>
+      </div>
+      <div class="w-full h-[395px] mt-2 overflow-hidden">
+        <basis core="call" lid="2" file="slider-engine.bc" />
+      </div>
+    </div>
+    <div class="limit-section grid grid-cols-1 gap-2">
+      <a href="" class="w-full flex flex-col p-3 rounded-lg">
+        <span class="text-sm">AVALABLE LIMIT</span>
+        <p class="text-xl font-bold">11,934.07 USD</p>
+      </a>
+      <a href="" class="w-full flex flex-col p-3 rounded-lg">
+        <span class="text-sm">AVALABLE LIMIT</span>
+        <p class="text-xl font-bold">11,934.07 USD</p>
+      </a>
+      <a href="" class="w-full flex flex-col p-3 rounded-lg">
+        <span class="text-sm">AVALABLE LIMIT</span>
+        <p class="text-xl font-bold">11,934.07 USD</p>
+      </a>
+      <a href="" class="w-full flex flex-col p-3 rounded-lg">
+        <span class="text-sm">AVALABLE LIMIT</span>
+        <p class="text-xl font-bold">11,934.07 USD</p>
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+  swiper = new Swiper(".swiper-engine", {
+    slidesPerView: 1,
+    speed: 700,
+    centeredSlides: !1,
+    spaceBetween: 3,
+    grabCursor: !0,
+    autoplay: { delay: 4500, disableOnInteraction: !1 },
+    loop: 1,
+    pagination: { el: ".swiper-pagination", clickable: !0 },
+    navigation: {
+      nextEl: ".swiper-button-next-f",
+      prevEl: ".swiper-button-prev-f",
+    },
+    breakpoints: {
+      640: { slidesPerView: 1, spaceBetween: 3 },
+      768: { slidesPerView: 1, spaceBetween: 3 },
+      1024: { slidesPerView: 1, spaceBetween: 3 },
+    },
+  });
+</script>

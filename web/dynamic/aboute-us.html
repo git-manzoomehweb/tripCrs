@@ -1,0 +1,276 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377911"
+>
+  <member name="our-services" type="view" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377908 "
+>
+  <member name="abote-us-desc" type="view" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2372751"
+>
+  <member name="our-goal" type="view" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(CRS Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Experience the best and easiets trip with CRS  Travel Agency.)##]"
+    />
+    <!-- Title & Description -->
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body>
+    <basis core="call" file="header.inc" lid="2" />
+
+    <main>
+      <section id="about-us-section" class="relative h541">
+        <img
+          src="[##cms.cms.cdn##]/images/aboute1.jpg"
+          alt="contact-background"
+          class="object-cover"
+          width="100%"
+          height="541"
+          loading="lazy"
+        />
+
+        <div
+          class="flex items-center gap-28 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto absolute top-0 left-0 right-0 pt-28"
+        >
+          <div class="w-1/2">
+            <p class="text-xl font-bold">About us</p>
+            <basis core="print" datamembername="db.abote-us-desc">
+              <face filter="Question in('introduction')">
+                <div class="mt-4 text-sm text-justify">@largetext</div>
+              </face>
+            </basis>
+          </div>
+
+          <div
+            class="w-1/2 relative flex justify-center bg-primary-900 h-fit mt-16"
+          >
+            <img
+              src="[##cms.cms.cdn##]/images/abote2.jpg"
+              alt="emoji"
+              class="w-full object-cover"
+              width="579"
+              height="351"
+              loading="lazy"
+            />
+            <img
+              src="[##cms.cms.cdn##]/images/aboute3.png"
+              alt="emoji"
+              class="bottom-0 absolute"
+              width="464"
+              height="388"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="max-lg:w-[90%] mb-10 max-xl:w-[97%] xl:max-w-7xl mx-auto mt-24"
+      >
+        <h2 class="relative mt-24 inline-block text-3xl">
+          <span
+            class="hidden absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"
+          ></span
+          >Our
+          <span class="font-bold text-tertiary-950"
+            >Services<span
+              class="hidden absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"
+            ></span
+          ></span>
+        </h2>
+        <basis core="print" datamembername="db.our-services">
+          <layout>
+            <div class="grid grid-cols-4 gap-2 mt-6">
+              <!-- items -->
+              @child
+            </div>
+          </layout>
+          <face filter="valueID in(4152293)">
+            <div
+              class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-xl"
+            >
+              <div
+                class="bg-secondary transition-all duration-300 rounded-xl px-3 py-2"
+              >
+                <svg
+                  width="58"
+                  height="62"
+                  viewBox="0 0 58 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M49.1842 42.1163C50.4411 39.2869 51.1484 36.1446 51.1484 32.8445C51.1484 20.2135 40.8933 9.9781 28.2623 9.9781C15.6511 9.9781 5.39844 20.2135 5.39844 32.8445C5.39844 35.7108 5.92832 38.4636 6.89197 40.9776"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.9032 48.628C12.2242 50.9201 15.1571 51.7039 17.4467 50.3805C19.7338 49.0568 20.5175 46.1313 19.1965 43.8444L15.1743 36.8721C13.8533 34.5825 10.9279 33.7961 8.63827 35.1173L8.07387 35.4401C6.63702 36.2707 5.91244 37.9762 6.4029 39.5609C7.27536 42.3852 8.77136 45.424 10.9032 48.628Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M45.6538 48.628C44.3329 50.9201 41.4001 51.7039 39.1103 50.3805C36.8233 49.0568 36.0395 46.1313 37.3606 43.8444L41.3828 36.8721C42.7037 34.5825 45.6292 33.7961 47.9212 35.1173L48.4832 35.4401C49.92 36.2707 50.6446 37.9762 50.1541 39.5609C49.2818 42.3852 47.7858 45.424 45.6538 48.628Z"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+              <div class="text-sm text-center text-zinc-500 line-clamp-3">
+                @largetext
+              </div>
+            </div>
+          </face>
+          <face filter="valueID in(4152294)">
+            <div
+              class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-xl"
+            >
+              <div
+                class="bg-secondary transition-all duration-300 rounded-xl px-3 py-2"
+              >
+                <img
+                  src="[##cms.cms.cdn##]/images/moon.svg"
+                  alt="moon"
+                  width="62"
+                  height="62"
+                />
+              </div>
+              <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+              <div class="text-sm text-center text-zinc-500 line-clamp-3">
+                @largetext
+              </div>
+            </div>
+          </face>
+          <face filter="valueID in(4152295)">
+            <div
+              class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-xl"
+            >
+              <div
+                class="bg-secondary transition-all duration-300 rounded-xl px-3 py-2"
+              >
+                <img
+                  src="[##cms.cms.cdn##]/images/earth.svg"
+                  alt="earth"
+                  width="58"
+                  height="62"
+                />
+              </div>
+              <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+              <div class="text-sm text-center text-zinc-500 line-clamp-3">
+                @largetext
+              </div>
+            </div>
+          </face>
+          <face filter="valueID in(4152296)">
+            <div
+              class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-xl"
+            >
+              <div
+                class="bg-secondary transition-all duration-300 rounded-xl px-3 py-2"
+              >
+                <img
+                  src="[##cms.cms.cdn##]/images/wallet.svg"
+                  alt="wallet"
+                  width="62"
+                  height="62"
+                />
+              </div>
+              <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+              <div class="text-sm text-center text-zinc-500 line-clamp-3">
+                @largetext
+              </div>
+            </div>
+          </face>
+        </basis>
+      </section>
+
+      <!-- <section
+        class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16 mb-24"
+      >
+        <h2 class="relative inline-block text-3xl">
+          <span
+            class="hidden absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"
+          ></span
+          >Our
+          <span class="font-bold text-tertiary-950"
+            >Goal<span
+              class="hidden absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"
+            ></span
+          ></span>
+        </h2>
+
+        <basis core="print" datamembername="db.our-goal">
+          <face filter="TypeID in(129)">
+            <div class="mt-6 text-sm text-justify text-zinc-900">
+              @largetext
+            </div>
+          </face>
+        </basis>
+      </section> -->
+    </main>
+
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

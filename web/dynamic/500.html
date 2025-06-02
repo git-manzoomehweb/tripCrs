@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(CRS Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(CRS Travel Agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full flex flex-col gap-2 items-center my-28 justify-center">
+      <img
+        loading="lazy"
+        width="629"
+        height="629"
+        src="[##cms.cms.cdn##]/images/500.png"
+        alt="500"
+        class="w-[419px] h-[419px]"
+      />
+      <h1 class="text-zinc-800">
+        There was a problem connecting to the server.
+      </h1>
+      <a
+        href="/"
+        class="w-[187px] flex justify-center items-center hoverd h-12 rounded-3xl bg-primary text-white"
+        >go to homepage</a
+      >
+    </main>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

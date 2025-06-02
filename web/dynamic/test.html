@@ -1,0 +1,269 @@
+<basis core="group" if="'[##cms.query.typemodule##]' = 'flight'">
+  <basis
+    core="dbsource"
+    name="db"
+    source="media"
+    lid="[##cms.query.lid|(2)##]"
+    sourcemid="1"
+    usedforid="2348468"
+  >
+    <member name="slider-flight" type="list" format="4" />
+  </basis>
+
+  <div class="w-[470px] max-[470px]:w-full h-[329px] swiper-wrapper">
+    <basis core="print" datamembername="db.slider-flight">
+      <layout> @child </layout>
+      <face filter="ord = 1000">
+        <div class="swiper-slide">
+          <img
+            class="rounded-[20px]"
+            src="/@largeIMG"
+            alt="@name"
+            class="w-full"
+            width="701"
+            height="701"
+          />
+        </div>
+      </face>
+    </basis>
+  </div>
+  <div class="static mt-6 swiper-pagination"></div>
+
+  <script>
+    var swiper = new Swiper("#banners", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 1000,
+      centeredSlides: false,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</basis>
+<basis core="group" if="'[##cms.query.typemodule##]' = 'hotel'">
+  <basis
+    core="dbsource"
+    name="db"
+    source="media"
+    lid="[##cms.query.lid|(2)##]"
+    sourcemid="1"
+    usedforid="2348474"
+  >
+    <member name="slider-hotel" type="list" format="4" />
+  </basis>
+  <div class="w-[470px] max-[470px]:w-full h-[329px] swiper-wrapper">
+    <basis core="print" datamembername="db.slider-hotel">
+      <layout> @child </layout>
+      <face filter="ord = 1000">
+        <div class="swiper-slide">
+          <img
+            class="rounded-[20px]"
+            src="/@largeIMG"
+            alt="@name"
+            class="w-full"
+            width="701"
+            height="701"
+          />
+        </div>
+      </face>
+    </basis>
+  </div>
+  <div class="static mt-6 swiper-pagination"></div>
+
+  <script>
+    var swiper = new Swiper("#banners", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 1000,
+      centeredSlides: false,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</basis>
+<basis core="group" if="'[##cms.query.typemodule##]' = 'tour'">
+  <basis
+    core="dbsource"
+    name="db"
+    source="media"
+    lid="[##cms.query.lid|(2)##]"
+    sourcemid="1"
+    usedforid="2348475"
+  >
+    <member name="slider-tour" type="list" format="4" />
+  </basis>
+
+  <div class="w-[470px] max-[470px]:w-full h-[329px] swiper-wrapper">
+    <basis core="print" datamembername="db.slider-tour">
+      <layout> @child </layout>
+      <face filter="ord = 1000">
+        <div class="swiper-slide">
+          <img
+            class="rounded-[20px]"
+            src="/@largeIMG"
+            alt="@name"
+            class="w-full"
+            width="701"
+            height="701"
+          />
+        </div>
+      </face>
+    </basis>
+  </div>
+  <div class="static mt-6 swiper-pagination"></div>
+
+  <script>
+    var swiper = new Swiper("#banners", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 1000,
+      centeredSlides: false,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</basis>
+<basis core="group" if="'[##cms.query.typemodule##]' = 'flighthotel'">
+  <basis
+    core="dbsource"
+    name="db"
+    source="media"
+    lid="[##cms.query.lid|(2)##]"
+    sourcemid="1"
+    usedforid="2348487"
+  >
+    <member name="slider-flighthotel" type="list" format="4" />
+  </basis>
+
+  <div class="w-[470px] max-[470px]:w-full h-[329px] swiper-wrapper">
+    <basis core="print" datamembername="db.slider-flighthotel">
+      <layout> @child </layout>
+      <face filter="ord = 1000">
+        <div class="swiper-slide">
+          <img
+            class="rounded-[20px]"
+            src="/@largeIMG"
+            alt="@name"
+            class="w-full"
+            width="701"
+            height="701"
+          />
+        </div>
+      </face>
+    </basis>
+  </div>
+  <div class="static mt-6 swiper-pagination"></div>
+
+  <script>
+    var swiper = new Swiper("#banners", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 1000,
+      centeredSlides: false,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</basis>
+<basis core="group" if="'[##cms.query.typemodule##]' = 'insurance'">
+  <basis
+    core="dbsource"
+    name="db"
+    source="media"
+    lid="[##cms.query.lid|(2)##]"
+    sourcemid="1"
+    usedforid="2348612"
+  >
+    <member name="slider-insurance" type="list" format="4" />
+  </basis>
+
+  <div class="w-[470px] max-[470px]:w-full h-[329px] swiper-wrapper">
+    <basis core="print" datamembername="db.slider-insurance">
+      <layout> @child </layout>
+      <face filter="ord = 1000">
+        <div class="swiper-slide">
+          <img
+            class="rounded-[20px]"
+            src="/@largeIMG"
+            alt="@name"
+            class="w-full"
+            width="701"
+            height="701"
+          />
+        </div>
+      </face>
+    </basis>
+  </div>
+  <div class="static mt-6 swiper-pagination"></div>
+
+  <script>
+    var swiper = new Swiper("#banners", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 1000,
+      centeredSlides: false,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</basis>

@@ -1,0 +1,564 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2377961"
+>
+  <member name="main-article" type="view" order="ord" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="media"
+  lid="2"
+  sourcemid="1"
+  usedforid="2378122"
+>
+  <member name="slider-flight" type="list" format="4" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="media"
+  lid="2"
+  sourcemid="1"
+  usedforid="2378123"
+>
+  <member name="slider-hotel" type="list" format="4" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="media"
+  lid="2"
+  sourcemid="1"
+  usedforid="2378121"
+>
+  <member name="slider-flightHotel" type="list" format="4" />
+</basis>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>flight and hotel supplier | b2b wholesaler | Trip CRS</title>
+    <meta
+      name="description"
+      content="Trip CRS is a b2b wholesaler and travel provider. We are able to provide flight and hotel for many travel agencies in the middle east."
+    />
+    <!-- canonical for Homepage -->
+    <link
+      rel="canonical"
+      href="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <!-- fill items with Agancy Info -->
+    <meta name="og:locale" content="fa_IR" />
+    <meta
+      property="og:title"
+      content="flight and hotel supplier | b2b wholesaler | Trip CRS"
+    />
+    <meta
+      property="og:url"
+      content="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Trip CRS" />
+    <meta
+      property="og:image"
+      content="https://tripcrs.com/images/custom_image_1200x630.png"
+    />
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+
+    <meta property="og:image:alt" content="Trip CRS Logo" />
+    <meta
+      property="og:description"
+      content="Trip CRS is a b2b wholesaler and travel provider. We are able to provide flight and hotel for many travel agencies in the middle east."
+    />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content=" " />
+    <meta name="twitter:creator" content="Trip CRS" />
+    <meta
+      name="twitter:image"
+      content="https://tripcrs.com/images/custom_image_1200x630.png"
+    />
+    <meta name="twitter:title" content=" " />
+    <meta name="twitter:description" content=" " />
+    <meta property="seo:robots" content="index, follow" />
+    <!-- samandehi-enamad optional -->
+    <meta name="enamad" content="" />
+    <meta name="samandehi" content="" />
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <!-- <link
+      rel="preload"
+      as="image"
+      imagesrcset="[##cms.cms.cdn##]/images/video-crs.gif"
+      fetchpriority="high"
+    /> -->
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="relative set-cst">
+    <basis core="call" lid="2" file="second-header.inc" />
+    <main class="overflow-hidden check-user-page">
+      <h1 class="sr-only">tripcsr</h1>
+
+      <section
+        id="login_register_box "
+        class="flex login_register_box w-full justify-center relative"
+      >
+        <div
+          class="xl:w-[1280px] xl:!px-0 px-5 hashed flex justify-center w-full items-center"
+        >
+          <div class="hidden-part w-full flex">
+            <div
+              id="bg-box"
+              class="hidden-part w-screen h-full absolute top-0 left-0 bg-box-search-condition"
+            >
+              <span
+                class="w-full h-full absolute top-0 left-0 z-[2] bg-[#00000033]"
+              ></span>
+              <video
+                class="h-full object-cover z-0 set-header-white w-full"
+                autoplay
+                muted
+                loop
+              >
+                <source
+                  src="[##cms.cms.cdn##]/images/video-crs.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <basis
+              core="group"
+              name="valid-rkey"
+              if="'[##db.checkrkey.checked##]'='false'"
+            >
+              <div class="w-full flex items-center py-[200px]">
+                <div class="lg:px-5 px-5 flex items-center justify-between">
+                  <div class="z-10 flex flex-col gap-8 relative">
+                    <div class="flex items-center gap-3">
+                      <a href="https://www.iata.org/">
+                        <img
+                          loading="lazy"
+                          width="81"
+                          height="54"
+                          src="[##cms.cms.cdn##]/images/IATAlogo.png"
+                          alt="IATAlogo"
+                          class="w-[54px] h-[35px]"
+                        />
+                      </a>
+
+                      <svg
+                        width="2"
+                        height="24"
+                        viewBox="0 0 2 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="1.25"
+                          y1="0.556885"
+                          x2="1.25"
+                          y2="23.5569"
+                          stroke="white"
+                          stroke-opacity="0.5"
+                        />
+                      </svg>
+
+                      <img
+                        loading="lazy"
+                        width="226"
+                        height="28"
+                        src="[##cms.cms.cdn##]/images/TRAVELPORT_LOGO.png"
+                        alt="TRAVELPORT_LOGO"
+                        class="w-[150px] h-[18.18px]"
+                      />
+                      <svg
+                        width="2"
+                        height="24"
+                        viewBox="0 0 2 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="1.25"
+                          y1="0.556885"
+                          x2="1.25"
+                          y2="23.5569"
+                          stroke="white"
+                          stroke-opacity="0.5"
+                        />
+                      </svg>
+                      <img
+                        loading="lazy"
+                        width="155"
+                        height="24"
+                        src="[##cms.cms.cdn##]/images/Amadeus.png"
+                        alt="Amadeus"
+                        class="w-[103px] h-[15px]"
+                      />
+                      <svg
+                        width="2"
+                        height="24"
+                        viewBox="0 0 2 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="1.25"
+                          y1="0.556885"
+                          x2="1.25"
+                          y2="23.5569"
+                          stroke="white"
+                          stroke-opacity="0.5"
+                        />
+                      </svg>
+                      <img
+                        loading="lazy"
+                        width="95"
+                        height="25"
+                        src="[##cms.cms.cdn##]/images/Sabre_Corporation.png"
+                        alt="Sabre_Corporation"
+                        class="w-[63px] h-[16px]"
+                      />
+                      <svg
+                        width="2"
+                        height="24"
+                        viewBox="0 0 2 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="1.25"
+                          y1="0.556885"
+                          x2="1.25"
+                          y2="23.5569"
+                          stroke="white"
+                          stroke-opacity="0.5"
+                        />
+                      </svg>
+                      <img
+                        loading="lazy"
+                        width="87"
+                        height="34"
+                        src="[##cms.cms.cdn##]/images/ndc.png"
+                        alt="ndc"
+                        class="w-[58px] h-[22px]"
+                      />
+                    </div>
+                    <span
+                      class="absolute text-white text-xs -top-6 flex justify-center items-center left-[80px] w-[93px] h-[23px] bg-primary-900 rounded-3xl"
+                      >Powered by</span
+                    >
+                    <article
+                      class="w-full group Tripcrs-article mt-10 flex flex-col gap-6"
+                    >
+                      <img
+                        loading="lazy"
+                        width="327"
+                        height="93"
+                        src="[##cms.cms.cdn##]/images/Tripcrs-lg.png"
+                        alt="Tripcrs"
+                        class="w-[327px] h-[93px] pointer-events-none"
+                      />
+                      <basis core="print" datamembername="db.main-article">
+                        <face filter="Question in('introduction')">
+                          <div class="text-white line-clamp-2">@largetext</div>
+                        </face>
+                      </basis>
+
+                      <div
+                        class="flex cursor-pointer h60 text-white items-center gap-2"
+                      >
+                        <!-- Viwe More
+                        <span class="group-hover:scale-125 transition-all">
+                          <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M33.7071 24.7071C34.0976 24.3166 34.0976 23.6834 33.7071 23.2929L27.3431 16.9289C26.9526 16.5384 26.3195 16.5384 25.9289 16.9289C25.5384 17.3195 25.5384 17.9526 25.9289 18.3431L31.5858 24L25.9289 29.6569C25.5384 30.0474 25.5384 30.6805 25.9289 31.0711C26.3195 31.4616 26.9526 31.4616 27.3431 31.0711L33.7071 24.7071ZM16 24L16 25L33 25L33 24L33 23L16 23L16 24Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </span> -->
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </basis>
+          </div>
+
+          <div
+            id="registerbox"
+            data-checkrkey="[##db.checkrkey.checked##]"
+            class="authentication__layout__container w-[32%] z-10 flex flex-col justify-between login-bg-sc rounded-[5px]"
+          >
+            <basis
+              core="group"
+              name="inValid-rkey"
+              if="'[##db.checkrkey.checked##]'='false'"
+            >
+              <basis core="call" file="authentication/modal" lid="2"></basis>
+            </basis>
+          </div>
+        </div>
+      </section>
+
+      <section class="after-login-section hidden">
+        <div
+          class="items-center relative flex flex-col gap-3 justify-center w-full"
+        >
+          <span
+            class="absolute -bottom-[750px] left-[-500px] w-[1182px] h-[1182px] rounded-full drp-sh"
+          ></span
+          ><span
+            class="absolute -bottom-[780px] left-[-550px] w-[1182px] h-[1182px] rounded-full drp-sh"
+          ></span
+          ><span
+            class="absolute -top-[640px] right-[-680px] w-[1182px] h-[1182px] rounded-full drp-sh2"
+          ></span
+          ><span
+            class="absolute -top-[620px] right-[-790px] w-[1182px] h-[1182px] rounded-full drp-sh2"
+          ></span>
+          <div
+            class="lg:px-5 z-30 px-5 pt-[120px] xl:w-[1280px] xl:!px-0 flex flex-col gap-3"
+          >
+            <div
+              class="w-full p-2 bg-[#F2F2F280] rounded-xl flex justify-between h-fit"
+            >
+              <div
+                class="w-[71%] z-20 flex flex-col justify-center items-center h-fit"
+              >
+                <div
+                  id="search_engine"
+                  class="search-box-container w-full en load-search-box-in-condition search-box-visibility"
+                >
+                  <div class="w-full flex justify-center items-center">
+                    <span class="loader"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-[28%] h-[395px] mt-2 overflow-hidden">
+                <basis core="print" datamembername="db.slider-flight">
+                  <layout>
+                    <div
+                      class="swiper-engine swiper-engine-fl flight swiper items-center relative w-full h-full"
+                    >
+                      <div class="swiper-wrapper">@child</div>
+                      <div
+                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </layout>
+                  <face filter="ord = 1000">
+                    <div class="swiper-slide rounded-[5px]">
+                      <img
+                        loading="lazy"
+                        width="354"
+                        height="412"
+                        src="@largeIMG"
+                        alt="@name"
+                        class="object-cover h-full w-full rounded-[5px]"
+                      />
+                    </div>
+                  </face>
+                </basis>
+                <basis core="print" datamembername="db.slider-hotel">
+                  <layout>
+                    <div
+                      class="swiper-engine swiper-engine-h hotel swiper items-center relative w-full h-full"
+                    >
+                      <div class="swiper-wrapper">@child</div>
+                      <div
+                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </layout>
+                  <face filter="ord = 1000">
+                    <div class="swiper-slide rounded-[5px]">
+                      <img
+                        loading="lazy"
+                        width="354"
+                        height="412"
+                        src="@largeIMG"
+                        alt="@name"
+                        class="object-cover h-full w-full rounded-[5px]"
+                      />
+                    </div>
+                  </face>
+                </basis>
+                <basis core="print" datamembername="db.slider-flightHotel">
+                  <layout>
+                    <div
+                      class="swiper-engine swiper-engine-fh flightHotel swiper items-center relative w-full h-full"
+                    >
+                      <div class="swiper-wrapper">@child</div>
+                      <div
+                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="#002d58"
+                          class=""
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </layout>
+                  <face filter="ord = 1000">
+                    <div class="swiper-slide rounded-[5px]">
+                      <img
+                        loading="lazy"
+                        width="354"
+                        height="412"
+                        src="@largeIMG"
+                        alt="@name"
+                        class="object-cover h-full w-full rounded-[5px]"
+                      />
+                    </div>
+                  </face>
+                </basis>
+              </div>
+            </div>
+            <div class="limit-section grid grid-cols-4 gap-2">
+              <a href="" class="w-full flex flex-col p-3 rounded-lg">
+                <span class="text-sm">AVALABLE LIMIT</span>
+                <p class="text-xl font-bold">11,934.07 USD</p>
+              </a>
+              <a href="" class="w-full flex flex-col p-3 rounded-lg">
+                <span class="text-sm">AVALABLE LIMIT</span>
+                <p class="text-xl font-bold">11,934.07 USD</p>
+              </a>
+              <a href="" class="w-full flex flex-col p-3 rounded-lg">
+                <span class="text-sm">AVALABLE LIMIT</span>
+                <p class="text-xl font-bold">11,934.07 USD</p>
+              </a>
+              <a href="" class="w-full flex flex-col p-3 rounded-lg">
+                <span class="text-sm">AVALABLE LIMIT</span>
+                <p class="text-xl font-bold">11,934.07 USD</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script
+        src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js"
+        type="text/javascript"
+      ></script>
+      <basis core="call" lid="2" file="footer.inc" />
+    </main>
+  </body>
+</html>

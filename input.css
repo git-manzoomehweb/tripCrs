@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Dana";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/Dana-Regular.ttf");
+}
+@font-face {
+  font-family: "Dana";
+  font-weight: 500;
+  font-style: normal;
+  src: url("./fonts/Dana-Medium.ttf");
+}
+@font-face {
+  font-family: "Dana";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/Dana-Bold.ttf");
+}
+
+html,
+* {
+  font-family: "Dana", sans-serif !important;
+}
+
+:root {
+  /* Primary Colors */
+  --primary-950: #032545;
+  --primary-900: #002d58;
+  --primary-800: #033e70;
+  --primary-700: #0b487c;
+  --primary-600: #185188;
+  --primary-500: #205990;
+  --primary-400: #4a719e;
+  --primary-300: #6c8aae;
+  --primary-200: #95aac5;
+  --primary-100: #bccdcd;
+  --primary-50: #e6ebf1;
+
+  /* Secondary Colors */
+  --secondary-950: #071ac9;
+  --secondary-900: #0017e7;
+  --secondary-800: #0024ec;
+  --secondary-700: #0029f2;
+  --secondary-600: #1e30fa;
+  --secondary-500: #3934ff;
+  --secondary-400: #6954ff;
+  --secondary-300: #8b74ff;
+  --secondary-200: #b09dff;
+  --secondary-100: #d1c4fe;
+  --secondary-50: #eeecff;
+
+  /* Text (Zinc) Colors */
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-600: #52525b;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --zinc-100: #f4f4f5;
+  --zinc-50: #fafafa;
+}
+header.white-header a,
+header.white-header * {
+  color: white !important;
+}
+header.white-header a svg path,
+header.white-header .bars3 svg path {
+  fill: white !important;
+}
+header.white-header img.logo {
+  filter: grayscale(1) brightness(10);
+}
+header.white-header .border-primary-100 {
+  border-color: white !important;
+}
+
+.header-menu {
+  background-color: #6ca2c572;
+  backdrop-filter: blur(20px);
+}
+
+.footer-labels {
+  background-color: #0708264d;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease-in-out !important;
+  z-index: 30 !important;
+}
+.footer-labels:hover,
+.footer-labels.active,
+footer .swiper-slide-active {
+  background-color: #002e58cc;
+  backdrop-filter: blur(10px);
+  height: 145px !important;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+body:not(.set-cst) footer {
+  margin-top: 15px !important;
+}
+.backdrop-blur-md {
+  backdrop-filter: blur(10px);
+}
+header {
+  z-index: 40 !important;
+}
+.login-bg-sc {
+  background-color: #ffffff66;
+  backdrop-filter: blur(20px);
+}
+.drp-sh {
+  box-shadow: 0px -20px 20px 0px #d9e0ee40;
+}
+.drp-sh2 {
+  box-shadow: 0px 20px 20px 0px #d9e0ee40;
+}
+.set-cst header.bg-transparent {
+  position: fixed;
+}
+.Tripcrs-article:hover img {
+  filter: invert(80%) sepia(100%) saturate(300%) hue-rotate(180deg);
+}
+.Tripcrs-article:hover span {
+  filter: invert(80%) sepia(100%) saturate(300%) hue-rotate(180deg);
+}
+.Tripcrs-article img,
+.Tripcrs-article span {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  background: var(--zinc-300);
+  border-radius: 50%;
+  position: relative;
+  animation: roll 1s ease-in-out infinite alternate;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.loader:after{
+  content:"";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 5px solid ;
+  border-color: var(--primary-800) transparent;
+}
+@keyframes roll {
+  0% {
+    transform: translateX(-150%) rotate(0deg) ;
+  }
+  100% {
+    transform:  translateX(150%) rotate(360deg);
+  }
+}
