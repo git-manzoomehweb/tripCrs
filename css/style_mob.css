@@ -12,12 +12,12 @@
   --primary-200: #95aac5;
   --primary-100: #beccdd;
   --primary-50: #e6ebf1;
-  --secondary-950: #040481;
-  --secondary: #040481;
+  --secondary-950: #2446ff;
+  --secondary: #2446ff;
   --secondary-900: #0017e7;
   --secondary-800: #0024ec;
-  --secondary-700: #0029f2;
-  --secondary-600: #1e30fa;
+  --secondary-700: #2446ff;
+  --secondary-600: #2446ff;
   --secondary-500: #3934ff;
   --secondary-400: #6954ff;
   --secondary-300: #8b74ff;
@@ -184,7 +184,7 @@ i[class^="flaticon-"]:before {
   background: var(--primary);
 }
 .total-cost {
-  color: #00a703;
+  color: var(--secondary-600) !important;
   font-size: 15px;
 }
 .title-result {
@@ -357,4 +357,8 @@ i[class^="flaticon-"]:before {
 }
 .warning {
   color: red;
+}
+
+.reserve-button.background-color_1 {
+  background-color: #ffb401 !important;
 }

@@ -1,0 +1,9 @@
+<basis core="call" file="Client_CheckRkey.inc" lid="2"></basis>
+<basis core="group" name="valid-rkey" if="'[##db.checkrkey.checked##]'='true'">
+  <basis core="call" file="authentication/modal" lid="2"></basis>
+</basis>
+<basis core="group" name="valid-rkey" if="'[##db.checkrkey.checked##]'='false'">
+  <div class="px-5 lg:!flex hidden">
+    <div class="px-5"></div>
+  </div>
+</basis>

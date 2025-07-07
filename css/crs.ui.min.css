@@ -758,10 +758,10 @@ header {
   #registerbox {
     position: absolute;
     width: 90% !important;
-    top: 430px !important;
+    top: 300px !important;
   }
   .hidden-part {
-    height: 1000px !important;
+    height: 830px !important;
   }
   .max-sm\:\!justify-between {
     justify-content: space-between !important;
@@ -2706,7 +2706,7 @@ video {
 }
 .service-list.bg-primary-50 {
   padding: 22px 30px !important;
-  background-color: #F2F2F280 !important;
+  background-color: #f2f2f280 !important;
 }
 .our-partners article {
   height: 130px !important;
@@ -2816,6 +2816,29 @@ video {
   height: 40px !important;
   border-radius: 50%;
 }
+.service-list a:first-child:hover span img {
+  filter: grayscale(1) brightness(100000);
+  --tw-invert: invert(100%);
+}
+.service-list a:nth-child(2):hover span img {
+  filter: grayscale(1) brightness(100000);
+  --tw-invert: invert(100%);
+}
+.service-list a:nth-child(3):hover span img {
+  filter: grayscale(1) brightness(100000);
+  --tw-invert: invert(100%);
+}
+.mail .setsp:nth-child(2):hover span img {
+  filter: grayscale(1) brightness(100000) invert(100%);
+  --tw-invert: invert(100%);
+}
+#visa-form [data-bc-schema-direction="rtl"] [data-bc-part-related-cell] {
+  margin-left: 0 !important;
+}
+.mail .setsp:nth-child(2) span img {
+  width: 40px !important;
+  height: 43px !important;
+}
 .loader {
   width: 48px;
   height: 48px;
@@ -2861,4 +2884,13 @@ video {
     transform: rotate(-360deg);
   }
 }
-
+.mail .setsp:nth-child(2) span img:first-child {
+  display: none !important;
+}
+.setsp:hover .aconvg img {
+  filter: grayscale(1) brightness(100000) invert(100%) !important;
+  --tw-invert: invert(100%) !important;
+}
+.w-14 {
+  width: 56px;
+}

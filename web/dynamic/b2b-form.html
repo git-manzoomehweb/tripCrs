@@ -51,16 +51,23 @@
     >
       <div class="w-full lg:px-5 py-[22px] xl:w-[1280px]">
         <div class="flex w-full justify-center items-center flex-col gap-7">
-          <h1 class=" mt-6 text-xl text-center font-bold text-zinc-900">
+          <h1 class="mt-6 text-xl text-center font-bold text-zinc-900">
             B2B Register Form
           </h1>
 
           <basis core="print" datamembername="db.b2b-article">
             <face filter="TypeID=250">
-              <div class="flex flex-col mb-6 w-full gap-3 justify-center items-center">
-                <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
-                <div class="text-sm text-center w-70 text-zinc-600">@largetext</div></div
-            ></face>
+              <div
+                class="flex flex-col mb-6 w-full gap-3 justify-center items-center"
+              >
+                <p class="text-2xl font-bold text-zinc-900 text-center">
+                  @text
+                </p>
+                <div class="text-sm text-center w-70 text-zinc-600">
+                  @largetext
+                </div>
+              </div></face
+            >
           </basis>
         </div>
         <div
@@ -70,7 +77,7 @@
           <basis
             core="schema"
             run="atclient"
-            schemaurl="/schema/domainform/EF590CA1-1446-417D-8BC9-001A63D7C6BD/E045CF5E-FF99-4573-A977-C5428651DDA8/fa/B2B-Register"
+            schemaurl="/schema/domainform/EF590CA1-1446-417D-8BC9-001A63D7C6BD/59C49D84-E08A-4CD9-8E53-E28E78F3F74F/en/Register-Form"
             displaymode="new"
             button="[data-btn-uploadAdvice]"
             resultsourceid="upload.dataAdvice"
@@ -80,7 +87,7 @@
             core="api"
             if="{##cms.uploadAdvice.run|(false)##}"
             run="atclient"
-            url="/schema/domainform/EF590CA1-1446-417D-8BC9-001A63D7C6BD/fa/editobject"
+            url="/schema/domainform/EF590CA1-1446-417D-8BC9-001A63D7C6BD/en/editobject"
             method="post"
             body="object_edit={##cms.uploadAdvice.value##}&captcha={##cms.uploadAdvice.captcha##}&captchaid={##cms.uploadAdvice.captchaid##}"
             content-type="application/x-www-form-urlencoded"

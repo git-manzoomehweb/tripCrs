@@ -1,3 +1,36 @@
+// Load search engine content
+function fetchEngine() {
+  try {
+    loadLoginContent();
+    var xhrobj = new XMLHttpRequest();
+    xhrobj.open("GET", "search-engine.bc");
+    xhrobj.send();
+
+    xhrobj.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var container = document.getElementById("search_engine");
+        container.innerHTML = xhrobj.responseText;
+
+        var scripts = container.getElementsByTagName("script");
+        for (var i = 0; i < scripts.length; i++) {
+          var scriptTag = document.createElement("script");
+          if (scripts[i].src) {
+            scriptTag.src = scripts[i].src;
+            scriptTag.async = false;
+          } else {
+            scriptTag.text = scripts[i].textContent;
+          }
+          document.head
+            .appendChild(scriptTag)
+            .parentNode.removeChild(scriptTag);
+        }
+      }
+    };
+  } catch (error) {
+    console.error("an error ocurred,please wait...", error);
+  }
+}
+
 function listenCookieChange() {
   if (document.querySelector("body.set-cst")) {
     const element = document.querySelector(".load-search-box-in-condition");
@@ -15,9 +48,9 @@ function listenCookieChange() {
             document
               .getElementById("bg-box")
               ?.style.setProperty("display", "none");
-            document
-              .getElementById("login_register_box")
-              ?.style.setProperty("display", "none");
+            // document
+            //   .getElementById("login_register_box")
+            //   ?.style.setProperty("display", "none");
             document
               .querySelectorAll(".loading")
               .forEach((el) => el.style.setProperty("display", "none"));
@@ -31,39 +64,9 @@ function listenCookieChange() {
               element.style.setProperty("display", "block", "important");
             }
 
-            // Load search engine content
-            function fetchEngine() {
-              try {
-                var xhrobj = new XMLHttpRequest();
-                xhrobj.open("GET", "search-engine.bc");
-                xhrobj.send();
-
-                xhrobj.onreadystatechange = function () {
-                  if (this.readyState == 4 && this.status == 200) {
-                    var container = document.getElementById("search_engine");
-                    container.innerHTML = xhrobj.responseText;
-
-                    var scripts = container.getElementsByTagName("script");
-                    for (var i = 0; i < scripts.length; i++) {
-                      var scriptTag = document.createElement("script");
-                      if (scripts[i].src) {
-                        scriptTag.src = scripts[i].src;
-                        scriptTag.async = false;
-                      } else {
-                        scriptTag.text = scripts[i].textContent;
-                      }
-                      document.head
-                        .appendChild(scriptTag)
-                        .parentNode.removeChild(scriptTag);
-                    }
-                  }
-                };
-              } catch (error) {
-                console.error("an error ocurred,please wait...", error);
-              }
-            }
             fetchEngine();
-
+            // Add class to body
+            document.body.classList.add("searchbox-load-success");
             // Show after-login section
             document
               .querySelector(".after-login-section")
@@ -75,9 +78,6 @@ function listenCookieChange() {
                 $bc.setSource("cms.get_agency_counter_credit", true);
               }
             }
-
-            // Add class to body
-            document.body.classList.add("searchbox-load-success");
           } else if (response === "3") {
             document
               .querySelector(".login_register_box")
@@ -99,9 +99,9 @@ function listenCookieChange() {
               .querySelector(".after-login-section")
               .classList.add("hidden");
 
-            document
-              .getElementById("login_register_box")
-              ?.style.setProperty("display", "none");
+            // document
+            //   .getElementById("login_register_box")
+            //   ?.style.setProperty("display", "none");
 
             if (element) {
               if (!element.classList.contains("hidden")) {
@@ -123,6 +123,7 @@ function listenCookieChange() {
 }
 
 listenCookieChange();
+
 // ___________________________________
 
 // ___________________________________
@@ -253,9 +254,11 @@ if (window.innerWidth >= 1024) {
 } else {
   headerMenuClose.addEventListener("click", function () {
     headerMenu.style.transform = "translateX(1024px)";
+    document.body.style.overflow = "";
   });
   bars3.addEventListener("click", function () {
     headerMenu.style.transform = "translateX(0)";
+    document.body.style.overflow = "hidden";
   });
 }
 
@@ -873,3 +876,174 @@ if (document.querySelector(".swiper-partner-m")) {
 //   });
 // }
 // ____________________________________
+
+const allSetsp = document.querySelectorAll(".mail .setsp");
+
+if (allSetsp.length >= 1) {
+  const secondSetsp = allSetsp[1];
+
+  const span = secondSetsp.querySelector("span");
+
+  if (span) {
+    const svg = span.querySelector("svg");
+    if (svg) {
+      svg.remove();
+    }
+
+    const img = document.createElement("img");
+    img.src = "../images/customer-support.png";
+    img.alt = "icon";
+    img.style.width = "33px";
+    img.style.height = "34px";
+    span.appendChild(img);
+  }
+}
+// _________________________
+// _________________________
+// _________________________
+
+function loadLoginContent() {
+  console.log("login after search engine loaded");
+  const container1 = document.querySelector(".set-login-modal");
+
+  if (!container1) return;
+
+  try {
+    var xhrobj = new XMLHttpRequest();
+    xhrobj.open("GET", "/authentication/api?lid=2");
+    xhrobj.send();
+
+    xhrobj.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        container1.innerHTML = xhrobj.responseText;
+
+        var scripts2 = container1.getElementsByTagName("script");
+        for (var i = 0; i < scripts2.length; i++) {
+          var scriptTag = document.createElement("script");
+          console.log(scripts2);
+
+          if (scripts2[i].src) {
+            scriptTag.src = scripts2[i].src;
+            scriptTag.async = false;
+          } else {
+            scriptTag.text = scripts2[i].textContent;
+          }
+          document.head
+            .appendChild(scriptTag)
+            .parentNode.removeChild(scriptTag);
+          console.log("done");
+        }
+      }
+    };
+  } catch (error) {
+    console.error("an error ocurred,please wait...", error);
+  }
+}
+// ________________________________
+// ________________________________
+// ________________________________
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const registerBox = document.querySelector("#registerbox");
+//   const element = document.querySelector(".load-search-box-in-condition");
+
+//   if (!registerBox) return;
+
+//   const registerboxUserProfileObserver = new MutationObserver(() => {
+//     const userProfile = registerBox.querySelector(".user-profile-container");
+
+//     if (userProfile) {
+//       fetch("/Client_User_Type.inc")
+//         .then((response) => response.text())
+//         .then((response) => {
+//           console.log(response);
+
+//           if (response === "2" || response === "1") {
+//             // Hide elements
+//             // document
+//             //   .getElementById("registerbox")
+//             //   ?.style.setProperty("display", "none");
+//             document
+//               .getElementById("bg-box")
+//               ?.style.setProperty("display", "none");
+//             // document
+//             //   .getElementById("login_register_box")
+//             //   ?.style.setProperty("display", "none");
+//             document
+//               .querySelectorAll(".loading")
+//               .forEach((el) => el.style.setProperty("display", "none"));
+//             document
+//               .querySelectorAll(".hidden-part")
+//               .forEach((el) => el.style.setProperty("display", "none"));
+
+//             // Show search box
+//             if (element) {
+//               element.classList.remove("hidden");
+//               element.style.setProperty("display", "block", "important");
+//             }
+
+//             fetchEngine();
+
+//             // Show after-login section
+//             document
+//               .querySelector(".after-login-section")
+//               .classList.remove("hidden");
+//             const credit = document.querySelector(".after-login-section")
+//               .dataset.credit;
+//             if (credit) {
+//               if (response == "2") {
+//                 $bc.setSource("cms.get_agency_counter_credit", true);
+//               }
+//             }
+
+//             // Add class to body
+//             document.body.classList.add("searchbox-load-success");
+//           } else if (response === "3") {
+//             document
+//               .querySelector(".login_register_box")
+//               .classList.add("set-for-not-b2b");
+
+//             document
+//               .querySelectorAll(".loading")
+//               .forEach((el) => el.style.setProperty("display", "none"));
+
+//             document.getElementById("box").style.setProperty("display", "none");
+//             document
+//               .getElementById("registerbox")
+//               ?.style.setProperty("display", "none");
+//             document
+//               .getElementById("bg-box")
+//               ?.style.setProperty("display", "block");
+
+//             document
+//               .querySelector(".after-login-section")
+//               .classList.add("hidden");
+
+//             // document
+//             //   .getElementById("login_register_box")
+//             //   ?.style.setProperty("display", "none");
+
+//             if (element) {
+//               if (!element.classList.contains("hidden")) {
+//                 element.classList.add("hidden");
+//               }
+//               element.style.setProperty("display", "none", "important");
+//             }
+//           }
+//         });
+//       // registerboxUserProfileObserver.disconnect(); // فقط یک‌بار اجرا
+//     }
+//   });
+
+//   registerboxUserProfileObserver.observe(registerBox, {
+//     childList: true,
+//     subtree: true,
+//   });
+
+//   // چک اولیه برای حالت از قبل موجود
+//   if (registerBox.querySelector(".user-profile-container")) {
+//     console.log("salam22");
+//     listenCookieChange();
+//     // registerboxUserProfileObserver.disconnect();
+//   }
+// });

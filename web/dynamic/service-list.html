@@ -15,9 +15,8 @@
   mid="1"
   name="db"
   usedforid="2378634"
-  
 >
-  <member name="service-article" type="view" order="ord" propertyid="7246"/>
+  <member name="service-article" type="view" order="ord" propertyid="7246" />
 </basis>
 <basis
   core="dbsource"
@@ -26,9 +25,8 @@
   mid="1"
   name="db"
   usedforid="2378222"
-  
 >
-  <member name="partner-article" type="view" order="ord" propertyid="7246"/>
+  <member name="partner-article" type="view" order="ord" propertyid="7246" />
 </basis>
 <basis
   core="dbsource"
@@ -119,14 +117,15 @@
       <section
         class="lg:px-5 py-[22px] flex flex-col gap-4 xl:w-[1280px] xl:!px-0"
       >
-        <div class="flex w-full flex-col gap-3 justify-center">
+        <div class="flex w-full flex-col gap-3 items-center justify-center">
           <h1 class="font-bold text-center mb-3 mt-6 text-xl">Our Services</h1>
           <basis core="print" datamembername="db.service-article">
             <face filter="TypeID=250">
-              <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
-              <div class="w-full flex justify-center">
-                <div class="text-sm w-70 text-zinc-600 flex text-center flex-col items-center justify-center">@largetext</div>
-
+              <div class="items-center flex flex-col gap-4">
+                <p class="text-2xl font-bold text-zinc-900">@text</p>
+                <div class="w-full flex justify-center">
+                  <div class="text-sm text-zinc-600">@largetext</div>
+                </div>
               </div>
             </face>
           </basis>
@@ -245,8 +244,7 @@
             <face filter="TypeID=250">
               <p class="text-2xl font-bold text-zinc-900 text-center">@text</p>
               <div class="w-full flex justify-center">
-                <div class="text-sm w-70 text-zinc-600 flex text-center flex-col items-center justify-center">@largetext</div>
-
+                <div class="text-sm text-zinc-600">@largetext</div>
               </div>
             </face>
           </basis>

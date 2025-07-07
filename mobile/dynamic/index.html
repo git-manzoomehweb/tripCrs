@@ -294,9 +294,19 @@
                     >Powered by</span
                   >
                   <article
-                    class="w-full group Tripcrs-article mt-10 flex flex-col gap-6"
+                    class="w-full group Tripcrs-article mt-2 flex flex-col gap-6"
                   >
-                    <h2 class="text-white setscd">Trip <span>CRS</span></h2>
+                    <!-- <h2 class="text-white setscd">Trip <span>CRS</span></h2> -->
+                    <div class="image-cntr">
+                      <img
+                        loading="lazy"
+                        width="327"
+                        height="93"
+                        src="[##cms.cms.cdn##]/images/Tripcrs-lg.png"
+                        alt="Tripcrs"
+                        class="w-[145px] h-[41px] pointer-events-none"
+                      />
+                    </div>
                     <basis core="print" datamembername="db.main-article">
                       <face filter="Question in('introduction')">
                         <div class="text-white text-sm line-clamp-2">
@@ -364,7 +374,7 @@
         >
           <div class="px-5 z-30 w-full flex flex-col gap-3">
             <div
-              class="w-full p-2 bg-[#F2F2F280] gap-4 rounded-xl flex flex-col justify-between h-fit"
+              class="w-full p-2 bg-[#F2F2F280] gap-4 rounded-xl flex flex-col-reverse justify-between h-fit"
             >
               <div class="w-full h-[395px] mt-2 overflow-hidden">
                 <basis core="print" datamembername="db.slider-flight">
