@@ -123,24 +123,25 @@
 
       <section
         id="login_register_box "
-        class="flex login_register_box w-full justify-center relative"
+        class="relative flex justify-center w-full login_register_box"
       >
         <div
           class="xl:w-[1280px] xl:!px-0 px-5 hashed flex justify-center w-full items-center"
         >
-          <div class="hidden-part w-full flex">
+          <div class="flex w-full hidden-part">
             <div
               id="bg-box"
-              class="hidden-part w-screen h-full absolute top-0 left-0 bg-box-search-condition"
+              class="absolute top-0 left-0 w-screen h-full hidden-part bg-box-search-condition"
             >
               <span
                 class="w-full h-full absolute top-0 left-0 z-[2] bg-[#00000033]"
               ></span>
               <video
-                class="h-full object-cover z-0 set-header-white w-full"
+                class="z-0 object-cover w-full h-full set-header-white"
                 autoplay
                 muted
                 loop
+                playsinline
               >
                 <source
                   src="[##cms.cms.cdn##]/images/video-crs.mp4"
@@ -155,8 +156,8 @@
               if="'[##db.checkrkey.checked##]'='false'"
             >
               <div class="w-full flex items-center py-[200px]">
-                <div class="lg:px-5 px-5 flex items-center justify-between">
-                  <div class="z-10 flex flex-col gap-8 relative">
+                <div class="flex items-center justify-between px-5 lg:px-5">
+                  <div class="relative z-10 flex flex-col gap-8">
                     <div class="flex items-center gap-3">
                       <a href="https://www.iata.org/">
                         <img
@@ -272,7 +273,7 @@
                       >Powered by</span
                     >
                     <article
-                      class="w-full group Tripcrs-article mt-10 flex flex-col gap-6"
+                      class="flex flex-col w-full gap-6 mt-10 group Tripcrs-article"
                     >
                       <!-- <h2 class="text-white setscd">Trip <span>CRS</span></h2> -->
                       <div class="image-cntr">
@@ -295,17 +296,17 @@
                       </div>
                       <basis core="print" datamembername="db.main-article">
                         <face filter="Question in('introduction')">
-                          <div class="text-white line-clamp-2 text-lg">
+                          <div class="text-lg text-white line-clamp-2">
                             @largetext
                           </div>
                         </face>
                       </basis>
 
                       <div
-                        class="flex cursor-pointer h60 text-white items-center gap-2"
+                        class="flex items-center gap-2 text-white cursor-pointer h60"
                       >
                         <!-- Viwe More
-                        <span class="group-hover:scale-125 transition-all">
+                        <span class="transition-all group-hover:scale-125">
                           <svg
                             width="48"
                             height="48"
@@ -343,9 +344,9 @@
         </div>
       </section>
 
-      <section class="after-login-section hidden" data-credit="true">
+      <section class="hidden after-login-section" data-credit="true">
         <div
-          class="items-center relative flex flex-col gap-3 justify-center w-full"
+          class="relative flex flex-col items-center justify-center w-full gap-3"
         >
           <span
             class="absolute -bottom-[750px] left-[-500px] w-[1182px] h-[1182px] rounded-full drp-sh"
@@ -370,9 +371,9 @@
               >
                 <div
                   id="search_engine"
-                  class="search-box-container w-full en load-search-box-in-condition search-box-visibility"
+                  class="w-full search-box-container en load-search-box-in-condition search-box-visibility"
                 >
-                  <div class="w-full flex justify-center items-center">
+                  <div class="flex items-center justify-center w-full">
                     <span class="loader"></span>
                   </div>
                 </div>
@@ -381,12 +382,12 @@
                 <basis core="print" datamembername="db.slider-flight">
                   <layout>
                     <div
-                      class="swiper-engine swiper-engine-fl flight swiper items-center relative w-full h-full"
+                      class="relative items-center w-full h-full swiper-engine swiper-engine-fl flight swiper"
                     >
                       <div class="swiper-wrapper">@child</div>
                       <div class="swiper-pagination"></div>
                       <div
-                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                        class="absolute left-0 z-10 flex items-center justify-center rounded-full swiper-button-next-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +404,7 @@
                         </svg>
                       </div>
                       <div
-                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                        class="absolute right-0 z-10 flex items-center justify-center rounded-full swiper-button-prev-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -437,12 +438,12 @@
                 <basis core="print" datamembername="db.slider-hotel">
                   <layout>
                     <div
-                      class="swiper-engine swiper-engine-h hotel swiper items-center relative w-full h-full"
+                      class="relative items-center w-full h-full swiper-engine swiper-engine-h hotel swiper"
                     >
                       <div class="swiper-wrapper">@child</div>
                       <div class="swiper-pagination"></div>
                       <div
-                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                        class="absolute left-0 z-10 flex items-center justify-center rounded-full swiper-button-next-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -459,7 +460,7 @@
                         </svg>
                       </div>
                       <div
-                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                        class="absolute right-0 z-10 flex items-center justify-center rounded-full swiper-button-prev-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -493,12 +494,12 @@
                 <basis core="print" datamembername="db.slider-flightHotel">
                   <layout>
                     <div
-                      class="swiper-engine swiper-engine-fh flightHotel swiper items-center relative w-full h-full"
+                      class="relative items-center w-full h-full swiper-engine swiper-engine-fh flightHotel swiper"
                     >
                       <div class="swiper-wrapper">@child</div>
                       <div class="swiper-pagination"></div>
                       <div
-                        class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center"
+                        class="absolute left-0 z-10 flex items-center justify-center rounded-full swiper-button-next-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -515,7 +516,7 @@
                         </svg>
                       </div>
                       <div
-                        class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center"
+                        class="absolute right-0 z-10 flex items-center justify-center rounded-full swiper-button-prev-f swiper-btn"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
