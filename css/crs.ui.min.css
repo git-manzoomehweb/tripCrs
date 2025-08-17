@@ -2894,3 +2894,9 @@ video {
 .w-14 {
   width: 56px;
 }
+.day.selected_date.days_available {
+  background: var(--primary-500) !important;
+}
+.days_available{
+    background-color: var(--primary-100);
+}

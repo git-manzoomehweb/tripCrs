@@ -11,6 +11,23 @@ function fetchEngine() {
         var container = document.getElementById("search_engine");
         container.innerHTML = xhrobj.responseText;
 
+        // const CalendarInp = document.querySelectorAll(
+        //   ".Basis_Date_Box .reserve-field input"
+        // );
+        // const EnCalendar = document.querySelector(
+        //   ".Basis_Calendar_Box.en-calendar"
+        // );
+        // CalendarInp.forEach((cal) => {
+        //   cal.addEventListener("click", () => {
+        //     EnCalendar.style.setProperty("display", "block", "important");
+        //   });
+        // });
+        // EnCalendar.querySelector(".calendar-apply-date").addEventListener(
+        //   "click",
+        //   () => {
+        //     EnCalendar.style.setProperty("display", "none", "important");
+        //   }
+        // );
         var scripts = container.getElementsByTagName("script");
         for (var i = 0; i < scripts.length; i++) {
           var scriptTag = document.createElement("script");

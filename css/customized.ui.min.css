@@ -1143,9 +1143,7 @@ header {
   border-bottom-right-radius: 3px;
   padding: 0.3rem 0.6rem;
 }
-#search_engine .passengerbox.hidden-box {
-  width: 18rem;
-}
+
 #search_engine .FlightClass.hidden-box li.active-FlightClass label span,
 #search_engine .FlightClass.hidden-box li:hover label span {
   color: var(--secondary-600);
@@ -1497,6 +1495,9 @@ h2.setscd span {
 @media screen and (max-width: 2281px) {
 }
 @media (min-width: 1024px) {
+  #search_engine .passengerbox.hidden-box {
+    width: 18rem !important;
+  }
   .image-cntr:hover img:first-child {
     opacity: 0 !important;
     animation: 0.55s ease-in-out forwards fadeout;
@@ -2361,4 +2362,77 @@ header .login-btn {
 }
 .Wrapper-ExteraHoteldate p.text-base.text-textColor {
   display: none !important;
+}
+@media not all and (min-width: 1024px) {
+  .label-flightclass span.label-text {
+    display: none !important;
+  }
+  .label-flightclass .down-icon {
+    display: none !important;
+  }
+  .label-flightclass {
+    display: flex;
+    align-items: center;
+    width: fit-content !important;
+  }
+  .flightclass-field
+    > .border-type-1.cursor-pointer.h-full.rounded-type-1.px-2 {
+    display: flex;
+    align-items: center;
+  }
+  #search_engine .reserve-field.flightclass-field {
+    border-right: 1px solid var(--zinc-300) !important;
+    border-left: none !important;
+  }
+  #search_engine .label-routes {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+  }
+  #search_engine .label-routes svg {
+    transform: translateY(19px) !important;
+    z-index: 2;
+  }
+  #search_engine .Flightclass-Passenger {
+    background-color: #fff;
+    padding-top: 10px;
+  }
+  #search_engine #r-flighthotel form {
+    display: unset !important;
+  }
+  #search_engine #r-flighthotel .Flightclass-Passenger {
+    display: flex;
+    flex-direction: column-reverse !important;
+    height: 235px !important;
+    justify-content: center;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  #search_engine .click-content {
+    display: flex !important;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+
+    background-color: #fff;
+  }
+  #search_engine input.text-value {
+    padding-left: 33px !important;
+  }
+  .hidden-box {
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+    z-index: 50 !important;
+  }
+
+  #r-hotel .passengerbox.hidden-box {
+    right: 0;
+    margin-top: 0rem !important;
+  }
+  .search-box-container.mobile-search-box .fixed-passengerbox {
+    z-index: 50 !important;
+  }
+}
+.search-box-container.mobile-search-box .fixed-searchList ul:first-child {
+  border-bottom: none !important;
 }
