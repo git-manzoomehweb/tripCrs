@@ -2805,6 +2805,24 @@ video {
 #visa-form #captchaContainer {
   margin-top: -8px !important;
 }
+#visa-form [data-bc-upload-file-item],
+#visa-form [data-bc-upload-file-item] img {
+  width: fit-content !important;
+}
+#visa-form .upload-qs [data-bc-question-title] {
+  display: flex !important;
+}
+#visa-form
+  [data-bc-schema-direction="rtl"]
+  .upload-qs
+  [data-bc-title-container]
+  [data-bc-question-title] {
+  display: flex !important;
+}
+#visa-form [data-bc-question] [data-bc-upload-file-item],
+#visa-form [data-bc-question] [data-bc-upload-file-item] img {
+  width: fit-content !important;
+}
 #registerbox .login-section-container input#firstUsernameInput {
   width: 100% !important;
 }
@@ -2897,6 +2915,6 @@ video {
 .day.selected_date.days_available {
   background: var(--primary-500) !important;
 }
-.days_available{
-    background-color: var(--primary-100);
+.days_available {
+  background-color: var(--primary-100);
 }
