@@ -1495,6 +1495,9 @@ h2.setscd span {
 @media screen and (max-width: 2281px) {
 }
 @media (min-width: 1024px) {
+  #search_engine .searchList {
+    z-index: 1000 !important;
+  }
   #search_engine .passengerbox.hidden-box {
     width: 18rem !important;
   }
@@ -1796,7 +1799,7 @@ h2.setscd span {
   border-radius: 12px;
   position: absolute;
   right: 9px;
-  width: 61px;
+  width: 81px;
   top: -3px;
   display: flex;
   justify-content: center;
