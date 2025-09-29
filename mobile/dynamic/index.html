@@ -13,6 +13,19 @@
 <basis core="dbsource" name="db" source="media" lid="2" sourcemid="1" usedforid="2378121">
   <member name="slider-flightHotel" type="list" format="4" />
 </basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="media"
+  lid="2"
+  sourcemid="1"
+  usedforid="2387594"
+>
+  <member name="slider-insurance" type="list" format="4" />
+</basis>
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -252,6 +265,39 @@
               <basis core="print" datamembername="db.slider-flightHotel">
                 <layout>
                   <div class="swiper-engine swiper-engine-fh flightHotel swiper items-center relative w-full h-full">
+                    <div class="swiper-wrapper">@child</div>
+                    <div class="swiper-pagination"></div>
+                    <div
+                      class="swiper-button-next-f z-10 swiper-btn absolute left-0 rounded-full flex justify-center items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#002d58" class=""
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                      </svg>
+                    </div>
+                    <div
+                      class="swiper-button-prev-f z-10 swiper-btn absolute right-0 rounded-full flex justify-center items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#002d58" class=""
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                      </svg>
+                    </div>
+                  </div>
+                </layout>
+                <face filter="ord = 1000">
+                  <div class="swiper-slide rounded-[5px]">
+                    <img loading="lazy" width="354" height="412" src="@largeIMG" alt="@name"
+                      class="object-cover h-full w-full rounded-[5px]" />
+                  </div>
+                </face>
+              </basis>
+
+
+
+              <basis core="print" datamembername="db.slider-insurance">
+                <layout>
+                  <div class="swiper-engine swiper-engine-fh insurance swiper items-center relative w-full h-full">
                     <div class="swiper-wrapper">@child</div>
                     <div class="swiper-pagination"></div>
                     <div
