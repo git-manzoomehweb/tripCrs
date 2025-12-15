@@ -2831,7 +2831,7 @@ header a[aria-label="linkedin"] svg {
   z-index: 40 !important;
 }
 
-button.book-card__btn.book-bg-primary-400:hover{
+#flightSearch button.book-bg-primary-500:hover{
   background-color: #ffb401 !important ;
 
 }
