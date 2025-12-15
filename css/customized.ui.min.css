@@ -821,12 +821,12 @@ header .user-profile-body li a {
 
 .set-cst header .bars3 svg path,
 .set-cst header a svg path {
-  fill: white !important;
+  /* fill: white !important; */
 }
 
 .searchbox-load-success.set-cst header .bars3 svg path,
 .searchbox-load-success.set-cst header a svg path {
-  fill: var(--secondary) !important;
+  fill: var(--primary) !important;
 }
 
 .set-cst header img.logo {
@@ -2723,12 +2723,12 @@ header a[aria-label="linkedin"] svg {
 }
 
 .set-cst header .logo-cn::after {
-  background-color: #ffb401;
+ background-color: #ffb401;
   position: absolute;
   right: 0;
-  width: 4px;
-  height: 4px;
-  bottom: 5px;
+  width: 6px;
+  height: 6px;
+  bottom: 5.5px;
   border-radius: 50%;
   content: "";
 }
@@ -2829,4 +2829,9 @@ header a[aria-label="linkedin"] svg {
 }
 #registerbox:has(.user-profile-btn) {
   z-index: 40 !important;
+}
+
+button.book-card__btn.book-bg-primary-400:hover{
+  background-color: #ffb401 !important ;
+
 }
