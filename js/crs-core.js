@@ -8,7 +8,7 @@ function fetchEngine() {
 
     xhrobj.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        var container = document.getElementById("search_engine");
+        var container = document.getElementById("search-box");
         container.innerHTML = xhrobj.responseText;
 
         var scripts = container.getElementsByTagName("script");
@@ -734,7 +734,7 @@ async function OnProcessedEditObjectAdvice(e) {
 }
 // ____________________________
 // function observeSearchEngineClass() {
-//   const el = document.querySelector("#search_engine");
+//   const el = document.querySelector("#search-box");
 //   if (!el) return;
 
 //   const observer = new MutationObserver(() => {

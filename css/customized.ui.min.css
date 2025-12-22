@@ -5,7 +5,7 @@ h2.setscd:hover {
 
 .hasNot-login-icon svg,
 .user-icon svg {
-  stroke: var(--secondary) !important;
+  stroke: var(--primary) !important;
 }
 
 a,
@@ -2834,4 +2834,33 @@ header a[aria-label="linkedin"] svg {
 #flightSearch button.book-bg-primary-500:hover{
   background-color: #ffb401 !important ;
 
+}
+
+.book-ltr .hover\:book-bg-secondary-500:hover {
+    background-color:  #ffb401 !important;
+}
+
+.book-ltr  .hover\:book-bg-secondary-400:hover {
+      background-color:  #ffb401 !important;
+}
+.book-checked.book-button__content, .book-button__content:hover {
+    background-color:  #ffb401 !important;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    border-color:  #ffb401 !important;
+}
+.book-active__paging, .book-paging__container:hover {
+    background-color:  #ffb401 !important;   
+     --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    border-color:  #ffb401 !important;
+}
+.book-ltr   .book-bg-secondary-100 ,.book-modal__btn__container:hover {
+    background-color:  #ffb401 !important;  
+}
+.hover\:book-bg-primary-400:hover {
+    background-color:   #ffb401 !important;
+}
+.book-tab__navigation__content:hover{
+  border-color: #ffb401 !important;
 }
